@@ -1,0 +1,95 @@
+<h2 id="four-essential-commands">Four essential commands</h2>
+
+<h2 id="goal-of-this-lesson">Goal of this lesson:</h2>
+
+<p>Although I am assume you are having enough experience to understand command line, I still introduce fours most important commands using in this course.</p>
+
+<p>They are:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ apt-get update
+$ apt-get upgrade
+$ apt-get install/ remove
+$ nano
+</code></pre>
+</div>
+<p>This may be the most boring chapter of this series, but it is kind of the most important one. Please try to go through it!</p>
+
+<h3 id="what-is-command-line">What is Command line:</h3>
+
+<p>A command is text which is written in a specific syntax. After entering a command into any terminal, the shell of your OS can understand and interpret this syntax and pass it to the OS to do what you want.</p>
+
+<p>Some command only available for power user, and you need the command sudo before it. It also may ask you to confirm root power if needed.</p>
+
+<p>Why do we use command line a lot in this courses? Because we are building our operating system from the ground up. Most of the time we will not have the luxury of GUI.</p>
+
+<p>But relying on GUI is not a healthy attitude, command line actually is a powerful tool that will help you on every aspect of Linux.</p>
+
+<h3 id="apt-and-the-sourcelist-file">Apt and the source.list file:</h3>
+
+<blockquote>
+  <p>Apt (short for Advanced Package Tool) is a set of core tools inside Debian. Apt makes it possible to:</p>
+</blockquote>
+
+<blockquote>
+  <p>Install applications</p>
+</blockquote>
+
+<blockquote>
+  <p>Remove applications</p>
+</blockquote>
+
+<blockquote>
+  <p>Keep your applications up to date</p>
+</blockquote>
+
+<blockquote>
+  <p>And much more…</p>
+</blockquote>
+
+<blockquote>
+  <p>Apt, which basically resolves dependency problems and retrieves the requested packages.</p>
+</blockquote>
+
+<p><em>(from Debian wiki)</em></p>
+
+<p>Apt frees you from the madness of specifying each of dependencies when installing an application. In an Linux OS, various applications may simultaneously need the same dependencies. Apt will keep the harmony between them by specifying only the appropriate version.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>/etc/apt/source.list
+</code></pre>
+</div>
+<p>This file is listing the sources where packages are being stored so that apt can know where to obtained them. These sources are called <strong>repositories</strong>.</p>
+
+<h3 id="the-four-commands">The four commands:</h3>
+
+<ol>
+  <li>Update repositories
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+</code></pre>
+    </div>
+    <p>This is the most important commands of apt-get.
+What it does is to go to the addresses listed in the <strong>/apt/etc/source.list</strong> file and update what have been changed from the last time you update repositories (which packages are on there now and which are the latest versions of them).
+After that <strong>apt</strong> will have the newest information of repositories (sources of packages) and can ask for the right version of packages. Otherwise, error will occur as the version of the package asked (old info) is not matching with that of is on repositories.</p>
+  </li>
+  <li>Install a package
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install firefox
+</code></pre>
+    </div>
+    <p>This command will also update the firefox package if it has been already installed.</p>
+  </li>
+  <li>Remove a package
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get remove firefox
+</code></pre>
+    </div>
+    <p>To also remove all of firefox’s configuration files on your system add the flag <strong>–purge</strong>:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get remove --purge firefox
+</code></pre>
+    </div>
+  </li>
+  <li>Edit text file using Nano editor
+<strong>Nano</strong> lets you edit text file directly from the terminal. In a Linux system, configuration files are text files.
+To edit a text:
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo nano /directory/configuration_file
+</code></pre>
+    </div>
+    <p>Please use the navigation keys (up/ down/ left/ right arrows) to navigate through the file and edit it.
+After making the changes, <strong>Ctrl + X</strong> to close nano editor, it will ask you to save, type <strong>“Y”</strong> to confirm, or type <strong>“N”</strong> to abort.</p>
+  </li>
+</ol>

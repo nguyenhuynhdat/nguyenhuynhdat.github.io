@@ -1,0 +1,103 @@
+<h2 id="essential-operating-system-application">Essential operating system application</h2>
+<ul>
+  <li>Terminal emulator</li>
+  <li>Text editor</li>
+  <li>Synaptic</li>
+  <li>Gdebi</li>
+  <li>Task manager (System monitor)</li>
+</ul>
+
+<h3 id="1-terminal-emulator">1. Terminal emulator</h3>
+<ol>
+  <li>Terminator for Ubuntu Openbox terminal emulator</li>
+</ol>
+
+<p>Using Linux, you need a terminal emulator (of course, you can live without but much easier if you know how to use one). A terminal acts as a mediator to pass your command to your OS.</p>
+
+<p>Terminator is a good terminal emulator with tabs support and it can be split in to terminal windows both horizontally and vertically.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install terminator
+</code></pre>
+</div>
+<p>Some useful keyboard shortcut:</p>
+<ul>
+  <li><strong>F11</strong>: Toggle fullscreen</li>
+  <li><strong>Ctrl + Shift+ O</strong>: Split terminals horizontally</li>
+  <li><strong>Ctrl + Shift+ E</strong>: Split terminals vertically</li>
+  <li><strong>Ctrl + Shift+ T</strong>: Open new tab</li>
+</ul>
+
+<p><img src="/images/Terminal_split.jpg" alt="terminator" /></p>
+
+<h3 id="2-text-editor">2. Text editor</h3>
+
+<p>You always need a text editor when using Linux as all its configuration file is in text form. If you are a developer and write code in on a daily basis, Geany is also a very good text editor with its variation of plugins.</p>
+
+<p>I am choosing Geany because it came as default with Crunchbang, my beloved distro. Just do not want to change to any other.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install geany
+</code></pre>
+</div>
+
+<p>We often combine <strong>geany</strong> with <strong>gksudo</strong> command to edit system files. Do not combine it with sudo (it will mess up Geany configuration file).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gksudo geany /etc/fstab
+</code></pre>
+</div>
+
+<p>Just remember this rule: <strong>sudo</strong> are for application in terminal, for Graphical one, you need to use <strong>gksudo</strong> instead. Otherwise, you will mess them up.</p>
+
+<p><img src="/images/Geany.png" alt="geany" /></p>
+
+<h3 id="3-synaptic">3. Synaptic</h3>
+<p><strong>Synaptic</strong> – GUI package manager</p>
+
+<p>Up until now, you have installed software mainly by <strong>apt-get</strong> via terminal, there is another good option to install them via a GUI package manager, Synaptic is always my first choice. It was extremely useful when you need to find a recommended packages when you install a minimal desktop.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install synaptic
+</code></pre>
+</div>
+
+<p>Here is how the status of Firefox and its recommends are showing in Synaptic:</p>
+
+<p><img src="/images/Synaptic-package-manager.jpg" alt="synaptic" /></p>
+
+<p>I do not use Synaptic much. <strong>apt-get</strong> is enough for managing package because now I really familiar with all applications I am using (know them by name and which of their recommended packages I need).</p>
+
+<h3 id="4-gdebi">4. Gdebi</h3>
+<p><strong>Gdebi</strong> to install .deb package</p>
+
+<p>Gdebi is also a nice program to handle .deb files, the standard package in Debian. After you have had Gdebi installed, whenever you want to install a .deb file, just double click it. Not recommend though, you should <strong><em>REALLY</em></strong> know what you are doing when dealing with packages which are outside of your official repository.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gdebi
+</code></pre>
+</div>
+<p>Another alternative if you do not use gdebi: One simple command can do it:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo dpkg -i deb_package #(to remove: sudo dpkg -r deb_package)
+</code></pre>
+</div>
+
+<p><img src="/images/gdebi.png" alt="gdebi" /></p>
+
+<h3 id="5-task-manager-system-monitor">5. Task manager (System monitor)</h3>
+<p>System monitor application - <strong>htop</strong></p>
+
+<p>Htop is a lightweight program and do the job just fine.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install htop
+</code></pre>
+</div>
+<p>In your terminal emulator, type htop, it will display all the running processes and the resources being used at that moment.</p>
+
+<p><img src="/images/htop.png" alt="htop" /></p>
+
+<p>As you can see here, I installed an Ubuntu 64bit on my computer, and the amount of RAM it takes on startup is just 390MB. That’s actually great comparing with other desktop environment, and if I go this way with 32bit, it’s easier to get to just slightly over 200MB of RAM.</p>
+
+<p>Here is how to bind the old combination keys <strong>Ctrl + Alt + Del</strong> to <strong>htop</strong> in your Openbox <strong>rc.xml</strong> configuration file:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;keybind key="C-A-Delete"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;startupnotify&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;name&gt;htop&lt;/name&gt;
+    &lt;/startupnotify&gt;
+    &lt;command&gt;terminator -e htop&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+</code></pre>
+</div>

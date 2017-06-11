@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ae707c0faf811179d73524e9fb86aedddf450e20">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m44-gtk-theme-for-ubuntu-openbox.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>GTK THEME</h1>
+      <p> install and configure a GTK theme. </p>
+        <p>GTK themes will define the appearance of applications on your system: the interfaces, the color of the taskbar (lxpanel only, tint2 will use its own configuration), the backgrounds for windows and tabs, the looks of GTK applications.</p>
+
+<p>As oppose to Openbox theme which defines the <strong>OUTSIDE</strong> - the title and the windows border, an GTK theme defines the look of what are <strong>INSIDE</strong> that windows border.</p>
+
+<ul>
+  <li>Normal GTK+ apps (Firefox, Transmission, Geany…)</li>
+</ul>
+
+<p>One of the things you should consider when install a theme is that which theme engines are needed. The creator of the theme often will tell you which theme engines will go with it.</p>
+
+<p><strong>Install a GTK theme:</strong></p>
+
+<p>Once you have downloaded a theme, place it into either of these directories: <strong>~/.themes</strong> or <strong>/usr/share/themes</strong>.</p>
+
+<p>Let me illustrate with my system. We will install <strong>FlatStudioGray</strong> theme and you can download it here:</p>
+
+<p><a href="http://gnome-look.org/content/show.php/FlatStudio?content=154296">http://gnome-look.org/content/show.php/FlatStudio?content=154296</a></p>
+
+<p>Extract the downloaded package.</p>
+
+<p>Then, move extracted <strong>Flatstudio</strong> theme folder into <strong>~/.theme</strong> folder.</p>
+
+<p>In Linux, every file/folder with its name begin with a period (.) is hidden.The <strong>“.theme”</strong> folder is often hidden and we need to unhide it: Using Thunar &gt; View &gt; Check “Show Hidden File”.</p>
+
+<p><img src="/images/Terminal_split.jpg" alt="terminator" /></p>
+
+<p>Now you can see ~/.theme folder and move Flatstudio folder to it.</p>
+
+<p>As I have said, you need theme engines to make the theme look exactly like it supposes to. As with this theme, the author have instructed us to install <strong>unico-engine</strong> &amp; <strong>gtk2-engines-murrine</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install unico-engine gtk2-engines-murrine
+</code></pre>
+</div>
+<p>Open <strong>Lxappearance</strong> (by the command <strong>lxappearance</strong>) &gt; Under the <strong>Widget</strong> tab, choose <strong>Flatstudio</strong>.</p>
+
+<p>And Voila! All should look good now.</p>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

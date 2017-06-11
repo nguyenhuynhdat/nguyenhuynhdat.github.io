@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ae707c0faf811179d73524e9fb86aedddf450e20">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m62-grub-bootloader.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>GRUB BOOTLOADER</h1>
+      <p> introduce some basic configurations of Grub bootloader. </p>
+        <h2 id="grub-bootloader">Grub bootloader</h2>
+
+<blockquote>
+  <p>“A bootloader is the first program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.”</p>
+</blockquote>
+
+<p><strong><em>- From Arch wiki</em></strong></p>
+
+<p>Ubuntu using Grub 2 as its bootloader.</p>
+
+<p>We have installed the Grub bootloader while installing Ubuntu in Module 2. Now we can configure it to fit out need.</p>
+
+<p>The file <strong>/etc/default/grub</strong> store the settings of Grub. Grub bootloader is a very important component of your system, editing it is a dangerous task.</p>
+
+<p>After editing it, run bellow command for the change to be applied.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo update-grub
+</code></pre>
+</div>
+
+<p>This file <strong>/etc/default/grub</strong> is rather short and does not have too much space for you to customize, as you can see mine here:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_DEFAULT=0
+
+#GRUB_HIDDEN_TIMEOUT=0
+
+GRUB_HIDDEN_TIMEOUT_QUIET=true
+
+GRUB_TIMEOUT=1
+
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=Linux acpi_backlight=vendor pcie_aspm=force drm.vblankoffdelay=1 i915.semaphores=1"
+
+GRUB_CMDLINE_LINUX=""
+GRUB_BACKGROUND="/home/dat/GrubBackground.png"
+</code></pre>
+</div>
+
+<p><em><strong>*The main options you can change in this file are:</strong>*</em></p>
+
+<h3 id="1-the-default-os-which-grub-will-always-chose-to-boot-first">1. The default OS which Grub will always chose to boot first.</h3>
+
+<p>When you see your Grub boot menu, from the top down will all the entries. The order will start with 0 for the first entry, 1 for the second and so on..</p>
+
+<p>To specify the default boot entry change the line below:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_DEFAULT=0
+</code></pre>
+</div>
+<p>This mean I am choosing the first entry as default.</p>
+
+<h3 id="2-hide-grub-menu-only-if-you-mainly-use-one-os-on-your-boot-menu">2. Hide Grub menu (only if you mainly use one OS on your boot menu)</h3>
+
+<p>To hide the Grub menu when boot, uncomment this line:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>#GRUB_HIDDEN_TIMEOUT=0
+</code></pre>
+</div>
+
+<h3 id="3-change-time-which-grub-menu-will-be-waiting-you-to-select-entry">3. Change time which Grub menu will be waiting you to select entry:</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_TIMEOUT=1
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>GRUB_TIMEOUT=<strong>-1</strong> : It will not auto boot but waiting for user to select an entry.</p>
+  </li>
+  <li>
+    <p>GRUB_TIMEOUT=<strong>10</strong>: this will wait for 10 second, change the number for how long it will wait.</p>
+  </li>
+</ul>
+
+<h3 id="change-kernel-parameters">Change kernel parameters:</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=Linux acpi_backlight=vendor pcie_aspm=force drm.vblankoffdelay=1 i915.semaphores=1"
+</code></pre>
+</div>
+
+<p>In various cases, especially when you are using a Laptop, for some function can work as expected, you have to specify the kernel parameters. You can do it with Grub by edit the line “GRUB_CMDLINE_LINUX_DEFAULT=…”.</p>
+
+<p>Mine on the ilustrating line above, it is for the LCD display of my desktop can work out right.</p>
+
+<p>Each laptop/PC might need specific kernel parameters. So please do research it yourself. I show it here because editing kernel parameters using Grub is such a important feature.</p>
+
+<h3 id="change-grub-background">Change Grub background:</h3>
+
+<p>This is the most exciting thing with this boring configuration activity. Changing the background of the Grub booting menu.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>GRUB_BACKGROUND="/home/dat/GrubBackground.png" #Just specific the path where your background image is stored.
+</code></pre>
+</div>
+
+<p>In Ubuntu I was surprise that I have to add this line manually, but it works wonderfully.</p>
+
+<p><em><strong>*FINAL WORDS:</strong>*</em></p>
+
+<p>With all of of these edits, please note that there are no spaces on any lines (except when in double quotes).</p>
+
+<p>And remember to update your Grub with <strong>sudo update-grub</strong>.</p>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

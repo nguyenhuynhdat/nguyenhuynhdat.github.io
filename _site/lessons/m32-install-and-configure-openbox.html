@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ae707c0faf811179d73524e9fb86aedddf450e20">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m32-install-and-configure-openbox.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>CONFIGURE OPENBOX</h1>
+      <p> configure three most important configuration files of Openbox: menu.xml, rc.xml and autostart. </p>
+        <p><em><strong>OVERVIEW:</strong></em></p>
+
+<p>What we will do to have a Openbox Windows manager:</p>
+<ul>
+  <li>Step 1: Install the core packages.</li>
+  <li>Step 2: Configure Openbox</li>
+</ul>
+
+<h3 id="1-install-the-core-packages">1. Install the core packages:</h3>
+
+<p>Here is the command to install them:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install xorg openbox suckless-tools terminator lxpanel thunar lightdm wicd firefox geany
+</code></pre>
+</div>
+<p>From previous <a href="">chapter</a>, you have known what are these core packages and what they will contribute to your system.</p>
+
+<p>After they have been installed, you will have a bare frame of a operating system with Xorg as the prerequisite of GUI and video driver, Lightdm as the login manager, Openbox as the windows manager, Thunar as the file manager, Lxpanel as taskbar, Wicd as the network manager, Terminator as the the terminal emulator, Geany as the text editor, Firefox as the web browser.</p>
+
+<p>From this frame, we will develop them into a fully functional OS.</p>
+
+<h3 id="2-configure-openbox">2. Configure Openbox:</h3>
+
+<p>After Step 1, reboot your system and login it for the first time. If a grayish screen are there greeting you (with mouse point). Your Openbox system is ready for further configuration.</p>
+
+<p>There are somethings that I should tell you about our upcoming system. If you come from a Windows world, you might expect that you can click a shortcut (icon) on your desktop to call an application. There will be no such thing in our system. The job of creating icon on your desktop is called <strong><em>“managing desktop”</em></strong> and it is the service of a File Manager. There are some File Managers that can but Thunar is not one of them (they are: Nautilus, PCManFM…).</p>
+
+<p>But I still choose Thunar because in my opinion the feature is redundant and unnecessary with Openbox. With its right clicking menu and shortcut keys, you will feel the superior of these methods is far over finding an icon on your desktop to click.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* ***Right-click menu***:
+
+By right clicking your mouse, there is a menu of applications. Click to any app to call it. But at the moment, you only can call Terminator (the terminal entry) or Firefox browser (the Web browser entry)
+
+* ***Shortcut keys***:
+
+Pressing the Windows key (the key that have “Microsoft Icon” on it) and the key T: **Windows + T**, the Terminator terminal should be started. The shortcut key will improve your productivity after you have familiar with it. Openbox let you choose shortcut keys freely. In later part of this chapter I will show you how to create your own shortcut keys.
+</code></pre>
+</div>
+
+<p>At the moment, your system will look a bit ugly comparing to modern standard. You will learn how to make your Openbox system looks decent in some later chapters. In Linux world, some of us really do not care much about the look. I have seen some minimalists using only tiling window manager with just wallpaper on the screen (They even go as far as not using any mouse at all).</p>
+
+<p>At the moment our Ubuntu Openbox has no taskbar, no wallpaper, no volume control, no terminal emulation, no file manager, no power manager, no network manager… A fully functional operation system will also not worry its user about some basic automating tasks such as: shutdown/restart, system monitor, etc. Our system is lacking all of that! 😀</p>
+
+<p>From now on we will add more features to our Openbox:</p>
+
+<ol>
+  <li>Open this guide on Firefox browser:</li>
+</ol>
+
+<p>The reason for telling you to install Firefox at the very beginning is for you to read this guide while installing your system (and also saving you some time by copying/ pasting commands directly from my website). Right-click, then choose “Web Browser” to start Firefox browser, go to <a href="UbuntuOpenbox.com/lessons">UbuntuOpenbox.com/lessons</a>.</p>
+
+<ol>
+  <li>Creating the seed configuration files:</li>
+</ol>
+
+<p>The configuration of Openbox is defined within three files: <strong>rc.xml</strong>, <strong>menu.xml</strong>, <strong>autostart</strong>.</p>
+
+<p>At default, after you have installed Openbox, there are no configuration files for normal user, and your Openbox is using the global configuration files stored at <strong>/etc/xdg/openbox</strong>. We will use these file as the seed for our further configuration.</p>
+
+<p>Type below command as normal to copy global files over home folder:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cp -R /etc/xdg/openbox ~/.config/
+</code></pre>
+</div>
+<p>Now if we go to the directory <strong>~/.config/openbox</strong> by:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ~/.config/openbox
+</code></pre>
+</div>
+<p>and see what are in it by:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>ls -lh
+</code></pre>
+</div>
+<p>These are the seed files for our Openbox configuration.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>showing ls output of the folder
+</code></pre>
+</div>
+
+<ol>
+  <li>Configure Openbox:</li>
+</ol>
+
+<p>We will configure the above seed files one by one:</p>
+
+<p><em><strong>menu.xml</strong></em>:</p>
+
+<p>We have some programs for auto generating right click menu, but I always find the auto generated menu too messy. I like to manually manage it.</p>
+
+<p>We will use my current configuration here on Pastebin.
+Then replace the current content of <strong>menu.xml</strong> with mine:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.config/openbox/menu.xml
+</code></pre>
+</div>
+<p>then Save</p>
+
+<p>With my menu we need to make the SHUTDOWN entry work by making the “sudo poweroff” command effective without entering password.</p>
+
+<p>We have to edit the <strong>/etc/sudoer</strong> file.</p>
+
+<p>Open <em>sudo</em> configuration file (sudoer) in the nano text editor by this command:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo visudo
+</code></pre>
+</div>
+<p>Add this line to the end it:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>user_name ALL=(ALL) NOPASSWD: /sbin/poweroff
+</code></pre>
+</div>
+<p>Ctrl + O to save the file and Ctrl + X to exit. (or just Ctrl + X and type “Yes” when it asks you to save)</p>
+
+<p>Keep in mind that this <strong>sudoer</strong> file is <strong><em>extremely</em></strong> important. If it is messed up, you are in serious trouble. <strong>ALWAYS</strong> edit this file with the command <strong>visudo</strong> (that mean using <strong>nano</strong> text editor only, no <strong>Geany</strong> whatsoever!) and be careful!</p>
+
+<p>Now the shutdown entry on your Right-click menu should work!</p>
+
+<p><em><strong>autostart</strong></em></p>
+
+<p>Any programs or commands in Openbox need to be instructed specifically if you want them to auto-run at the startup. You can also set timing to start those programs chronologically. Fortunately, the job is fairly easy. All you need to do is put a line of command in the <strong>autostart</strong> file.</p>
+
+<p>For instance, the command to start <strong>lxpanel</strong>:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>(sleep 3s &amp;&amp; lxpanel) &amp;
+</code></pre>
+</div>
+<p>The command mean: delay 3 second before starting <strong>lxpanel</strong>.</p>
+
+<p>We are also using mine <strong>autostart</strong> file. Here is its link on Pastebin.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.config/openbox/autostart
+</code></pre>
+</div>
+
+<p><em><strong>rc.xml</strong></em></p>
+
+<p>This file helds the configuration for all the shotrcut-keys and define how an application will appear on the screen. How to modifying the file is really easy. Below is the typical entry:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;keybind key="W-t"&gt;
+      &lt;action name="Execute"&gt;
+        &lt;startupnotify&gt;
+          &lt;enabled&gt;true&lt;/enabled&gt;
+          &lt;name&gt;Terminal&lt;/name&gt;
+        &lt;/startupnotify&gt;
+        &lt;command&gt;terminator&lt;/command&gt;
+      &lt;/action&gt;
+    &lt;/keybind&gt;
+</code></pre>
+</div>
+<p>Just change the combination keys **‘<keybind key="W-t">'** and the command **'<command />terminator&lt;/command&gt;'** respectively and you will have a shortcut-key.</keybind></p>
+
+<p>Somethings you need to be noted:</p>
+
+<ul>
+  <li>The capital W: the Windows key <a href="/images/windowsicon.png">windows key</a></li>
+  <li>The capital A: the Alt key</li>
+  <li>The capital S: the Shift key</li>
+  <li>The capital C: the Control key</li>
+</ul>
+
+<p>Click to the link to go to my rc.xml file on pastebin. Copy the content and replace the current content of <strong>rc.xml</strong> file. <strong>Mind you</strong>, the content is really long!</p>
+
+<p>To open the rc.xml file with Geany:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.config/openbox/rc.xml
+</code></pre>
+</div>
+
+<p>Restart your computer for all the change to take effect.</p>
+
+<h3 id="4-using-obmenu-to-edit-menu">4. Using <strong>Obmenu</strong> to edit menu:</h3>
+
+<p>Although edit the menu.xml text file directly is easy, you can use a program called <strong>Obmenu</strong> to edit the file using GUI.</p>
+
+<p>To install:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install Obmenu
+</code></pre>
+</div>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

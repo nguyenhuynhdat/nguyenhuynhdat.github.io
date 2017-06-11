@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ae707c0faf811179d73524e9fb86aedddf450e20">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m63-maintaining-your-ubuntu-os.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>MAINTAIN YOUR UBUNTU/ DEBIAN SYSTEM</h1>
+      <p> introduce some "house keeping" tasks for a Debian system. </p>
+        <h3 id="1-update-your-system-frequently">1. Update your system frequently</h3>
+
+<p>Just be familiar with these two command and you good to go:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+</code></pre>
+</div>
+<p>It will update the information <strong>apt</strong> is having from all repositories in <strong>/etc/apt/source.list</strong> file.</p>
+
+<p>This command does not install package, just update information.</p>
+
+<p>This following command will actually install newest version of any package that has been installed in your system (if any).</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get upgrade
+</code></pre>
+</div>
+<p>You should always do it one in a while (I prefer once a week) to keep your system up to date.</p>
+
+<p>Or just:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre>
+</div>
+<p>The <strong>“&amp;&amp;”</strong> part is for telling the terminal only run the <strong>upgrade</strong> command if only the <strong>update</strong> command has been finished.</p>
+
+<p><em><strong>_TO SUM UP:_</strong></em></p>
+
+<ul>
+  <li><strong>update</strong>: get information about what is the newest version of any package on the repository.</li>
+  <li><strong>upgrade</strong>: compare the version of each package installed on your computer and download the newest version of them if any.</li>
+</ul>
+
+<h3 id="2-keep-your-system-clean">2. Keep your system clean</h3>
+
+<p>Cleaning up the cache of <strong>apt</strong>:</p>
+
+<p><strong>apt</strong> is keeping all the downloaded binary files (.deb) after any of your installation/update has been taken place. These <strong>.deb</strong> file are made available in case you want to reinstall or repair them. That means if you clear this cache, you need to re-download packages should the need arises later.</p>
+
+<p>To see how much apt has been cached <strong>.deb</strong> files:</p>
+
+<p>First, go to the apt cache directory by:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cd /var/cache/apt/archives
+</code></pre>
+</div>
+<p>then:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>du -ch
+</code></pre>
+</div>
+<p><strong>du -ch</strong> mean:</p>
+
+<ul>
+  <li><strong>du</strong>: disk usage command - return the size of a directory</li>
+  <li><strong>c</strong>: for returning the total</li>
+  <li><strong>h</strong>: human - easier for us to read the output (the size will be in Megabyte measurement unit)</li>
+</ul>
+
+<p>The command <strong>apt-get clean</strong> will <strong><em>clear all</em></strong> of the cache.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get clean
+</code></pre>
+</div>
+
+<p>OR only <strong><em>downsizing</em></strong> the apt cache:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get autoclean
+</code></pre>
+</div>
+
+<p>The <strong>autoclean</strong> is a more compromising way if you want to keep apt’s cache locally in a reasonable size. It only deletes the packages that are deemed useless (partial packages).</p>
+
+<p>To clean up of any unused dependencies that was left behind after you remove a package:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get autoremove
+</code></pre>
+</div>
+
+<h3 id="3-analyzed-the-usage-of-your-disk-to-find-if-there-is-any-unused-folder-hogging-space">3. Analyzed the usage of your disk to find if there is any unused folder hogging space.</h3>
+
+<p>We will use a very good program call baobab (Disk Usage Analyzer).</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install baobab
+</code></pre>
+</div>
+<p>You should start it with root privilege to get the most information possible.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>gksu baobab
+</code></pre>
+</div>
+<p>Disk Usage Analyzer</p>
+
+<p><img src="/images/Disk-Usage-Analyzer.jpg" alt="baobab" /></p>
+
+<h3 id="4-monitor-your-system">4. Monitor your system</h3>
+
+<p>If you feel that something has gone wrong: suddenly your fan running fast, your computer slowing down… you should use <strong>htop</strong> to find out if there are programs hogging your system resources (using a lot of CPU power or RAM).</p>
+
+<p>Problem like this often happens when there is a program which requires resources that beyond the capability of your system or simply because a program is not configured correctly. For the former case, you have to find another lightweight alternative. For the later, here is my own experience: I used to encounter a problem with my video configuration. The video player did not use GPU power but used CPU power and cause extremely high CPU usage for no obvious reason. After tracking the problem down, I then reconfigured my GPU and everything is fine now.</p>
+
+<p>These are typical cases that you should using system monitor to detect what is the culprit. You may need to <strong>Kill</strong> that process (to terminate it) for further step can be taken.</p>
+
+<p>To <strong><em>kill</em></strong> a running program the hard way (force it to close) by using command in terminal when the normal way of clicking the close button on its windows do not have any effect (that program is hanging or something).</p>
+
+<p>You can terminate a running program:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>killall [program_name]
+</code></pre>
+</div>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

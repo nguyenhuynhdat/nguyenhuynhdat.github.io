@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ae707c0faf811179d73524e9fb86aedddf450e20">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m52-multimedia-apps-for-ubuntu-openbox.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>MULTIMEDIA APPLICATIONS</h1>
+      <p> install a video player, a music player, a media converter, an image suite, an image viewer and a better screenshoter . </p>
+        <h3 id="1-play-audio-and-video-with-vlc">1. Play audio and video with VLC</h3>
+
+<p><a href="www.videolan.org">www.videolan.org</a></p>
+
+<p>Vlc have it own codec pack, so you do not need to install any others and it works out of the box.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install vlc
+</code></pre>
+</div>
+<p>It has ability for choosing audio output. This feature is essential if you want to output to various ends (Usb soundcard, on board soundcard, HDMI as in my case).</p>
+
+<h3 id="2-play-music-and-other-audio-with-audacious">2. Play music and other audio with Audacious:</h3>
+
+<p><a href="http://audacious-media-player.org/">http://audacious-media-player.org/</a></p>
+
+<p>At first, I chose <strong>Audacious</strong> just because of the <strong>“grey”</strong> theme (will show you where to get). But now, after years of use, I love its lightweight feature and the ability to change sound card easily (I use a USB DAC/AMP).</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install audacious
+</code></pre>
+</div>
+<p>Here is where to get that <strong>“grey”</strong> theme:</p>
+
+<p><a href="http://gnome-look.org/content/show.php/?content=135104">http://gnome-look.org/content/show.php/?content=135104</a></p>
+
+<p>My <strong>Audacious</strong> with the <strong>grey</strong> theme:</p>
+
+<p><img src="/images/Music-With-Audacious-Bluetooth.jpg" alt="audacious" /></p>
+
+<h3 id="3-cmus-as-text-based-music-player">3. Cmus as text based music player</h3>
+
+<p><a href="https://cmus.github.io/">https://cmus.github.io/</a></p>
+
+<p>Though we have a lot other options for GUI music players, I still want to introduce you to this text base (console) music player <strong>CMUS</strong> for its ability to manage large music library.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install cmus
+</code></pre>
+</div>
+
+<p>It runs directly from your terminal emulator. To initiate it, in a terminal enter <strong>cmus</strong> command.</p>
+
+<p>It uses keyboard shortcut to control, please go here to know more about it: https://wiki.archlinux.org/index.php/Cmus#Adding_Music</p>
+
+<h3 id="4-ffmpeg-as-moviemusic-converter">4. FFmpeg as movie/music converter</h3>
+
+<p><a href="https://www.ffmpeg.org/">https://www.ffmpeg.org/</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install ffmpeg
+</code></pre>
+</div>
+<p>It’s has a lot of presets (available converting profiles) for you to choose. You can create one but I find the defaults are more than enough.</p>
+
+<p>When I was learning English, I converted a lot of episodes of Friends TV series into .mp3 using FFmpeg, put it on my mp3 player to hone my listening skill whenever I had time.</p>
+
+<h3 id="5-gimp-as-image-suite">5. Gimp as image suite</h3>
+
+<p><a href="https://www.gimp.org/">https://www.gimp.org/</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install gimp
+</code></pre>
+</div>
+<p>With my primitive demand on an Image manipulating app, Gimp can be compared head to head with Photoshop CS. It may take you some of time to get familiar with its interface and tool. In my opinion, what prevent new user to using Gimp is the lack of guide and course about it (its interface is different from Photoshop). I have recently found that Udemy have some course for Gimp, will check it out and recommend to you if I see something good.</p>
+
+<h3 id="6-viewnior-as-image-viewer">6. Viewnior as image viewer</h3>
+
+<p><a href="http://siyanpanayotov.com/project/viewnior/">http://siyanpanayotov.com/project/viewnior/</a></p>
+
+<p>Viewnior is a very fast and competent image viewer. I always hate image viewer that take even seconds to load its library or an image.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install viewnior
+</code></pre>
+</div>
+
+<h3 id="7-shutter-for-screen-capture">7. Shutter for screen capture</h3>
+
+<p><a href="http://shutter-project.org/">http://shutter-project.org/</a></p>
+
+<p>Shutter is powerful! It gives you a lot of options (which windows, which menu, which area of the screen..) to capture your screen and give you the tools to edit captured image. In fact, almost all images on this website are captured by Shutter.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install shutter
+</code></pre>
+</div>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

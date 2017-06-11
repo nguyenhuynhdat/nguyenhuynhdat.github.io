@@ -1,0 +1,150 @@
+<h2 id="goal-of-this-lesson">Goal of this lesson:</h2>
+<p>The following is an outline of how your learning experience will like. I will introduce the core concepts and the steps we will take without actually doing any thing, rather it will give you the full picture of how Openbox and other components are put together to form a complete Ubuntu Openbox system. Reading through this overview should help you to avoid initial frustrations and ultimately help you to better understand all the up coming lesson.</p>
+
+<h2 id="core-concepts">Core concepts:</h2>
+<h3 id="window-manager-vs-desktop-environment">Window Manager Vs. Desktop Environment</h3>
+<p>To understand what Openbox actually is, it’s important to know the difference between a window manager and a desktop environment.</p>
+
+<blockquote>
+  <p>A window manager is the program which draws on your screen the “box” in which the program is run. A window manager controls how your program window works, looks and acts. It decides what window decorations to use and gives you a way to move the windows, hide them, resize them, minimize them and close them. It controls what buttons you push to do those things, and what keys you press to make those things happen.</p>
+</blockquote>
+
+<blockquote>
+  <p>On the other hand, a desktop environment minds the entire desktop. It provides a taskbar, a system tray, a login manager, additional menus or perhaps screensavers and desktop icons. It might include a file manager, a text editor or some other accessory programs, too.”</p>
+</blockquote>
+
+<p>from: <a href="https://wiki.debian.org/Openbox/" title="Openbox documentation on Debian's wiki">Debian wiki</a></p>
+
+<p>In short, what Openbox give you are just the “boxes” in which the programs are run. This is modest, but this modesty is also the reason why people love Openbox or Window manager in general. You will have the change to deeply configure the system and to choose the only specific apps/ features needed.</p>
+
+<p>There is so much space for us to customize - it is also where the magical of Openbox begin.</p>
+
+<h2 id="overview-of-the-installation">Overview of the installation</h2>
+
+<h3 id="1-core-steps">1. Core steps</h3>
+
+<p>Let’s go through the installation step by step together!</p>
+
+<ol>
+  <li>
+    <p>Step 1: Install the base Ubuntu OS without any GUI.</p>
+
+    <p>This step only install ubuntu to the point of having a functional OS, on top of this base, we will build our Openbox and other desktop components.</p>
+  </li>
+  <li>
+    <p>Step 2: Install Xorg, the foundation of GUI.</p>
+
+    <p>Xorg will install graphic driver and other requisites for the GUI.</p>
+  </li>
+  <li>
+    <p>Step 3: Install Openbox and other component of a desktop environment (file manager, network manager, notification, taskbar).</p>
+
+    <p>After this step, we will have a complete desktop and you can consider it has done and you can completely skip step 4 and go straight to step 5 to polish your system with icon and theme.
+ If you want to know more about <em>my</em> chosen and recommended applications, please read on to step 4.</p>
+  </li>
+  <li>
+    <p>Step 4: Install necessary applications for day to day use.</p>
+
+    <p>I group these applications into some major group based on their general usage: Internet applications (web browser, email client, torrent client), Office applications (Libre office suite), Multimedia applications (VLC, SMplayer…)…</p>
+
+    <p>The main point of this step is to show you my choice and the reason for it. I assume that if you are so well verse in Debian/ other Linux distros that you want to use Openbox, install and using these applications is just a breeze for you.</p>
+  </li>
+  <li>
+    <p>Step 5: Customize the look and feel of your new OS.
+  Of course their will come to the time that your computer is just like a tool for your work and the look and feel of it will have no longer matter. But at this moment, I can assure you that customize your own Openbox is a fun and exciting experience.</p>
+  </li>
+</ol>
+
+<h3 id="2-core-packages">2. Core packages:</h3>
+
+<p>Here is the command to install all necessary packages for a competent Ubuntu operating system using Openbox (other non-UBUNTU OPENBOX relating packages are intentionally left out of the list):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install xorg openbox openbox-themes openbox-xdgmenu suckless-tools obmenu lxappearance terminator lxpanel thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin humanity-icon-theme gvfs gvfs-backends nitrogen alsa-base alsa-utils vlc numlockx light-locker lightdm wicd lxpolkit xfce4-notifyd
+</code></pre>
+</div>
+
+<p><strong>What each of these packages actually does?</strong></p>
+
+<p>With the above command, you have installed a series of packages which you can install one by one as explaining here:</p>
+
+<ol>
+  <li>
+    <dl>
+      <dt>Xorg as the requisite of GUI.</dt>
+      <dd>Packages: <strong><code class="highlighter-rouge">xorg</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Openbox.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">openbox openbox-themes openbox-xdgmenu suckless-tools obmenu lxappearance</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Terminator as terminal emulator.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">terminator</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Geany as text manager.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">geany gksudo</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Lxpanel for taskbar.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">lxpanel</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Thunar and its plug-ins for your file manager.</dt>
+      <dd>Packages: <strong><code class="highlighter-rouge">thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin gvfs gvfs-backends</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>An icon set for displaying your file and folder in a file manager.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">humanity-icon-theme</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Nitrogen for setting wallpapers.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">nitrogen</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Alsa for sound driver.</dt>
+      <dd>Packages: <strong><code class="highlighter-rouge">alsa-base alsa-utils</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Additional utilities.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">numlockx light-locker lxpolkit</code></strong></dd>
+    </dl>
+
+    <ul>
+      <li><strong><code class="highlighter-rouge">numlockx</code></strong> is for enable the numlock at start up.</li>
+      <li><strong><code class="highlighter-rouge">light-locker</code></strong> is for locking screen</li>
+      <li><strong><code class="highlighter-rouge">lxpolkit</code></strong> is an policykit authentication agent, help you with permission to access hard drive…</li>
+      <li><strong><code class="highlighter-rouge">xfce4-notifyd</code></strong> is for notification mechanism (new email received, download completed or battery fully charged )</li>
+    </ul>
+  </li>
+  <li>
+    <dl>
+      <dt>Network manager.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">wicd</code></strong></dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>Login manager.</dt>
+      <dd>Package: <strong><code class="highlighter-rouge">lightdm</code></strong></dd>
+    </dl>
+  </li>
+</ol>

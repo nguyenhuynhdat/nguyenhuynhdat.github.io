@@ -1,0 +1,145 @@
+<h2 id="essential-operating-system-features">Essential operating system features</h2>
+<ul>
+  <li>Notification mechanism</li>
+  <li>Audio driver</li>
+  <li>Windows fonts</li>
+  <li>App got taking screenshot</li>
+  <li>App for locking screen
+    <h3 id="1-login-manager">1. Login manager</h3>
+  </li>
+</ul>
+
+<p><strong>lightdm</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install lightdm lightdm-gtk-greeter
+</code></pre>
+</div>
+<p><strong>lightdm</strong> is a lightweight yet functional login manager. A loggin manager manages loggin attempts and  prompts the user for credentials, lets the user select a session..</p>
+
+<p><strong><em>The below is totally unnecessary, but it is nice to having another option:</em></strong>
+I used to have a bad experience with a loggin manager suddenly refusing to work after an update and it left with a blank black screen. Although it was just a minor bug and I was easy to get slim to work again, there is a choice of not using any loggin manager.</p>
+
+<p>The only nuisance left is that you have to initiate your desktop with <strong>startx</strong> command whenever you fire up your computer. To work around it you need to do the following.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.profile
+</code></pre>
+</div>
+<p>We will add some lines into <strong>~/.profile</strong> file in your home folder:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># startx after login
+if [[ -z $DISPLAY ]] &amp;&amp; [[ $(tty) = /dev/tty1 ]]; then
+exec startx
+fi
+</code></pre>
+</div>
+<p>Now as soon as you have entered your login credential, the GUI will be launched.</p>
+
+<h3 id="2-notification-mechanism">2. Notification mechanism</h3>
+<p>Your operating system needs a way to notify you when an event happens (an email is received, your battery is low…).</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install xfce4-notifyd
+</code></pre>
+</div>
+<p>Now, any program that needs desktop notification (Thunderbird, Transmission…) should have a tool for displaying their messages ( in a form of bubbles popping out on your desktop)</p>
+
+<p>To configure how would the notification be like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>xfce4-notifyd-config
+</code></pre>
+</div>
+
+<p><img src="/images/xfce4-notifyd-fullwindow.png" alt="notification bubble" /></p>
+
+<h3 id="2-audio-driver">2. Audio driver</h3>
+
+<p>What gives you the driver is Alsa and what gives you multiple choice over output is PulseAudio.
+It is recommended to use both on your system.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install alsa-base alsa-utils pulseaudio pavucontrol
+</code></pre>
+</div>
+<p>You should get sound work immediately, if not, follow by entering this command:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>alsactl init
+</code></pre>
+</div>
+<p>In your terminal using the command Alsamixer to open the mixer and using SPACE to unmute all the channels.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>alsamixer
+</code></pre>
+</div>
+
+<h3 id="3-windows-fonts">3. Windows fonts</h3>
+<p>Lacking windows fonts, some website and documents will not display nicely (Especially documents received from someone using Windows). To install Windows fonts:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install ttf-mscorefonts-installer
+</code></pre>
+</div>
+<p>These fonts are free by the way.</p>
+<h3 id="4-app-got-taking-screenshot">4. App got taking screenshot</h3>
+<p>Printing screen/ screen capturing program: <strong>scrot</strong></p>
+
+<p>To use <strong>scrot</strong>, in a terminal window, type:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>scrot -d 5 -c
+</code></pre>
+</div>
+<p>It will take a screen shot after 5 seconds and display the countdown (-d for delaying and -c for displaying the countdown).</p>
+
+<p>The captured image will be saved in your home folder.</p>
+
+<p>This <strong>scrot</strong> command should be bound to the <strong>PRINT SCREEN</strong> key on your keyboard for convenience. I have configured that in the rc.xml file like this:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;keybind key="Print"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;command&gt;scrot -cd1&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+</code></pre>
+</div>
+<h3 id="5-app-for-locking-screen">5. App for locking screen</h3>
+<p>To lock screen with <strong>light-locker</strong>:</p>
+
+<p>Lock screen for me is must-have feature as I often worked at various places and my normal working section often takes too long to be able to always attend at my laptop.</p>
+
+<p>I am choosing <strong>light-locker</strong> for its nature of lightweight and simple.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install light-locker
+</code></pre>
+</div>
+<p>Bind <strong>Windows + l</strong> these keys to the following command:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ light-locker-command -l
+</code></pre>
+</div>
+<p>in your rc.xml file. The entry will look like this:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;keybind key="W-l"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;startupnotify&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;name&gt;lock&lt;/name&gt;
+    &lt;/startupnotify&gt;
+    &lt;command&gt;light-locker-command -l&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+</code></pre>
+</div>
+<h3 id="6-apps-launcher">6. Apps launcher</h3>
+
+<p>Quickly launch a program with gmrun:</p>
+
+<p><strong>gmrun</strong> give you the ability to quickly launch a program or run a command by just using your keyboard. To make it is easier it will recommend you a list of commands that have already installed in your system based on what you have type:</p>
+
+<p><img src="/images/gmrun.png" alt="gmrun" /></p>
+
+<p>To install:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Sudo apt-get install gmrun
+</code></pre>
+</div>
+<p>In my my rc.xml file, the <strong>gmrun</strong> have been bound into <strong>“Windows key + R”</strong>.
+Press these combination keys and <strong>gmrun</strong> window should be ready.</p>
+
+<p>Already “Equipped” with a right-click menu and a bunch of shortcut keys, now with this a launcher the convenience of launching a program in Openbox system is top notch.</p>
+
+<p>Here is how the key binding entry look like in my rc.xml:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;/keybind&gt;
+&lt;keybind key="W-r"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;startupnotify&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;name&gt;gmrun&lt;/name&gt;
+    &lt;/startupnotify&gt;
+    &lt;command&gt;gmrun&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+</code></pre>
+</div>

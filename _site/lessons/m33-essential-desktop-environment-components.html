@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ae707c0faf811179d73524e9fb86aedddf450e20">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m33-essential-desktop-environment-components.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>ESSENTIAL DESKTOP ENVIRONMENT COMPONENTS</h1>
+      <p> install taskbar, file manager, wallpaper manager, network manager and power manager. </p>
+        <h2 id="essential-desktop-environment-components">Essential desktop environment Components</h2>
+<ul>
+  <li>Taskbar</li>
+  <li>File manager (with achieve manager)</li>
+  <li>App for setting wallpaper</li>
+  <li>Network manager</li>
+  <li>Power manager</li>
+</ul>
+
+<h3 id="1-taskbar">1. Taskbar</h3>
+
+<p>Initially I have been using <strong>tint2</strong> for taskbar, but after reinstall Openbox with Ubuntu 16.04. After remembering a good person have recommended <strong>lxpanel</strong>, I have been Using ever since.</p>
+
+<p>Although I understand the completeness and quick set-up of <strong>lxpalnel</strong>, <strong>tint2</strong> is still awesome in its own way, the customizability.</p>
+
+<p>Please try both!</p>
+
+<p><strong>LXPANEL</strong>:
+Lxpanel is a lightweight yet fully equipped with
+all the necessary plugins (from volume adjusting to menu…)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install lxpanel
+</code></pre>
+</div>
+
+<p>Here is some configuration that I have make to my <strong>lxpanel</strong>:</p>
+
+<ul>
+  <li>Make it use the system theme:
+<strong>right-click</strong> &gt; <strong>Panel settings</strong> to access panel references &gt; <strong>Appearance</strong> tab &gt; tick <strong>System theme</strong> in the <strong>Background</strong> section.</li>
+</ul>
+
+<p><img src="/images/Panel Preferences_Systemtheme.png" alt="lxpanelSystemtheme" /></p>
+
+<ul>
+  <li>I have borrow the awesome and mature logout script from <a href="https://www.bunsenlabs.org/"><strong>bunsenlabs</strong></a> distro <a href="https://github.com/BunsenLabs/bunsen-exit">here</a>:</li>
+</ul>
+
+<p>Download it and then put it somewhere convenience to access, say: <strong>/home/user/Custom/bl-exit</strong></p>
+
+<p><strong>right-click</strong> &gt; <strong>Panel settings</strong> to access panel references &gt; <strong>Advanced</strong> tab &gt; type below command in the <strong>Logout Command</strong> box in the <strong>Set preferred applications</strong> section.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>python /home/dat/Custom/bl-exit
+</code></pre>
+</div>
+
+<p><img src="/images/Panel Preferences_Logout.png" alt="lxpanelSystemtheme" /></p>
+
+<p>Now you have a very nice logout interface with enough choices:</p>
+
+<p><img src="/images/blexit.png" alt="bl-exit" /></p>
+
+<p><strong>TINT2</strong>:</p>
+
+<p><strong><em>Please install bl-exit from the above section because in my tint2 configuration file I also use the script to logout</em></strong></p>
+
+<p>To install <strong>tint2</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install tint2
+</code></pre>
+</div>
+<p>Tint2 is a full feature, customizable yet lightweight enough even for a minimal enthusiast.
+With its default setting, tint2 will look extremely ugly. So again we will use my configuration file.</p>
+
+<p><img src="/images/tint2.png" alt="tint2taskbar" /></p>
+
+<p>My configuration on pastebin, <a href="https://pastebin.com/hxYLwYjw">here!</a></p>
+
+<p>Copy this content to replace the current one.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.config/tint2/tint2rc
+</code></pre>
+</div>
+
+<p>I have borrowed this configuration from someone on Crunchbang forum and do not remember specifically whom. It has been my favorite Tint2 since. Please let me give him or her my respect!</p>
+
+<p>With <strong>tint2</strong>, you need these two package:</p>
+<ul>
+  <li><strong>gsimplecal</strong> for a Calendar</li>
+  <li><strong>volti</strong> for volume adjustment</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gsimplecal volti
+</code></pre>
+</div>
+<p><strong>BATTERY ICON ON SYSTEM TRAY</strong>
+To have it you have to install a power manager application. My current one is from <strong>Mate</strong> desktop environment. Please go to the 6th section of this page to know more about it.</p>
+
+<p>There are also some scripts that monitor your battery and place a icon on <strong>lxpanel</strong> system tray (to name a few: cbatticon, tidybattery…), but they often need to be compiled (installed) from source code. This way, it will depend on you to solving the missing/ conflicting of dependencies. I want you to have a safe and easy installed system, so a power manager is an obvious choice.</p>
+
+<h3 id="2-file-manager-with-achieve-manager">2. File manager (with achieve manager)</h3>
+
+<p>There is nothing much to say about a file manager as it is critical for your user’s experience. <strong>Thunar</strong> is just easy to use like most of file manager, intuitive and short learning curve.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin humanity-icon-theme gvfs gvfs-backends
+</code></pre>
+</div>
+
+<p>Along with the main package, for Thunar can have enough features we need to install some more (the additional features: add icon, add achieve entries to Thunar menu, add sharing file accessibility…)</p>
+
+<p><img src="/images/Panel Preferences_Systemtheme.png" alt="thunar" /></p>
+
+<p><strong>USE CATFISH TO SEARCH FILE AND INTEGRATE IT TO THUNAR RIGHT-CLICK MENU</strong></p>
+
+<p><strong>catfish</strong> is a searching files application, easy to use and does the job gracefully, which can integrate into <strong>Thunar</strong> using its <strong><em>“custom action”</em></strong> feature.</p>
+
+<p><em><strong>To install:</strong></em></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install catfish
+</code></pre>
+</div>
+
+<p><em><strong>To integrate it into Thunar</strong></em></p>
+
+<p>In <strong>Thunar</strong> &gt; <strong>Edit</strong> &gt; <strong>Configure custom action</strong> &gt; <strong>Edit action</strong> to edit both of the tabs as showing bellow:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>catfish --path=%f
+</code></pre>
+</div>
+<p><img src="/images/Edit Action_c.png" alt="editactionCommand" /></p>
+
+<p><img src="/images/Edit Action_t.png" alt="editactionFiletype" /></p>
+
+<p>Now you have a entry on <strong>Thunar</strong> right click menu for searching files &amp; folders.</p>
+
+<p><img src="/images/RMenuThunar.png" alt="SearchThunar" /></p>
+
+<h3 id="3-archive-manager">3. Archive manager</h3>
+
+<p>Install an archive manager and compression utilities:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install file-roller rar unrar p7zip zip unzip p7zip-full p7zip-rar
+</code></pre>
+</div>
+<p>After installing these packages, you will have full compressing/decompressing power in your right click menu (when you are in Thunar).</p>
+
+<p><img src="/images/File_Roller.png" alt="fileroller" /></p>
+
+<h3 id="4-app-for-setting-wallpaper">4. App for setting wallpaper</h3>
+<p>I chose Nitrogen for wallpaper manager.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install nitrogen
+</code></pre>
+</div>
+<p>My entry of “Choose Wallpaper” (under the “Settings” entry) in your right click menu has set  to point to a folder name “Wallpapers” in my home directory, I have to create that folder and copy my favorite wallpapers into it.</p>
+
+<p>In my <strong>menu.xml</strong> the entry for <strong>Nitrogen</strong>:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;item label="Choose Wallpaper"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;command&gt;nitrogen ~/Wallpapers/&lt;/command&gt;
+	&lt;/action&gt;
+&lt;/item&gt;
+</code></pre>
+</div>
+
+<p>To create a Wallpapers folder:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir ~/Wallpapers
+</code></pre>
+</div>
+
+<p>Now testing it by <strong>Right-click</strong> &gt; <strong>Settings</strong> &gt; <strong>Choose Wallpaper</strong> and <strong>Apply</strong>!</p>
+
+<p><img src="/images/nitrogen.png" alt="nitrogen" /></p>
+
+<h3 id="5-network-manager">5. Network manager</h3>
+
+<p><strong>wicd</strong> is a standalone (not depending any desktop environment) and full feature network manager:
+To install:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install wicd
+</code></pre>
+</div>
+
+<p>How to use it is pretty straight forward, please tinker it yourself.</p>
+
+<p><img src="/images/wicd.png" alt="wicd" /></p>
+
+<p>Wicd oftions:</p>
+
+<p><img src="/images/wicdoption.png" alt="wicdoption" /></p>
+
+<p>You can see how I configure my network to use Google DNS.</p>
+
+<h3 id="6-power-manager">6. Power manager</h3>
+
+<p>Over the course of using Linux I have changed power manager applications from time to time. Currently I find that the one form Mate desktop environment is the most suitable.</p>
+
+<p>Besides control the power references, the power manager also gives <strong>lxpanel/ tint2</strong> a nice battery icon (Laptop only)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install mate-power-manager
+</code></pre>
+</div>
+<p><img src="/images/Power Management Preferences.png" alt="wicdoption" /></p>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

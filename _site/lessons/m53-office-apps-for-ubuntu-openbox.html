@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ae707c0faf811179d73524e9fb86aedddf450e20">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m53-office-apps-for-ubuntu-openbox.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>OFFICE APPLICATIONS</h1>
+      <p> install a word processor, a spreedsheet, a pdf reader and an ebook reader. </p>
+        <p>###1. Office suite:</p>
+
+<p>For normal use of office work, LibreOffice is competent enough:</p>
+
+<p><a href="https://www.libreoffice.org/">https://www.libreoffice.org/</a></p>
+
+<p>You can either install entire of this office suite or pick out only what you need. I only use two of the modules:</p>
+
+<ul>
+  <li>
+    <p>Calc: spreadsheet application.</p>
+  </li>
+  <li>
+    <p>Writer: word processing application.
+<code class="highlighter-rouge">
+apt-get install libreoffice-calc libreoffice-writer libreoffice-gtk
+</code>`</p>
+  </li>
+</ul>
+
+<p>The <strong>libreoffice-gtk</strong> package is <strong>Libreoffice</strong> can integrate nicely with the system gtk theme (other wise it will look urgly).</p>
+
+<p>You can choose one from several icon set. In the screenshot below I am using the <strong>“sifr”</strong> icon sets:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install libreoffice-style-sifr
+</code></pre>
+</div>
+
+<p>Then apply it by changing the <strong>“Icon size and styles”</strong> (User Interface) to “sifr”, go to <strong>Tool</strong> &gt; <strong>Options</strong> &gt; <strong>View</strong>.</p>
+
+<p>To enable the ability to remember the last working place in your document, you need to fill out your <strong>“User Data”</strong>. Go to <strong>Tool</strong> &gt; <strong>Options</strong> &gt; <strong>User Data</strong>.</p>
+
+<p>If there is no user identified, LibreOffice will assume a new user is opening a document and will open it at the beginning.</p>
+
+<p>As a die hard user of spreadsheets, Calc is just a standard and for light spreadsheet work only. I am intensively depending on VBA/ GAS script. Only Microsoft Excel or Google Sheet can meet my requirement.</p>
+
+<p>LibreOffice Calc</p>
+
+<p>LibreOffice Writer</p>
+
+<h3 id="2-qpdfview-as-pdf-reader">2. qpdfview as Pdf reader</h3>
+
+<p>As I had some bad experiences with Evince when I was using Crunchbang/ Debian Wheezy (Slow to navigate through a large PDF file, blured displays of images in PDF file). Then I found <strong>qpdfview</strong>, quickly open any PDF:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install qpdfview
+</code></pre>
+</div>
+
+<h3 id="3-fbreader-as-ebook-reader">3. Fbreader as ebook reader</h3>
+
+<p><a href="https://fbreader.org/">https://fbreader.org/</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install Fbreader
+</code></pre>
+</div>
+<p>“Supports popular ebook formats: ePub, fb2, mobi, rtf, html, plain text, and a lot of other formats” (From its website!). It’s also lightweight and very fast to open ebook.</p>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

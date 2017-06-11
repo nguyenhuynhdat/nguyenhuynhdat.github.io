@@ -1,0 +1,69 @@
+<h2 id="get-the-most-out-of-apt-get">Get the most out of apt-get</h2>
+
+<p>Ubuntu/ Debian use <strong>Apt (Advanced Package Tool)</strong> as their package manager (a package manager is a tool that assist you on resolving dependencies when installing, upgrading, configuring, and removing software).</p>
+
+<p>Through out this guide, we only use <strong>apt-get install</strong> to install a package. In this part of the guide, I will show you how to get the most out of <strong>Apt</strong> package manger.</p>
+
+<h3 id="it-all-starts-with-update-repositories-information">It all starts with update repositories information:</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get update
+</code></pre>
+</div>
+<h3 id="to-update-entire-of-system">to update entire of system:</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get upgrade
+</code></pre>
+</div>
+<p>Although name <strong>“upgrade”</strong>, the command is only for update packages that are already installed in your system.</p>
+
+<h3 id="to-install-and-update-a-package">to install and update a package</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install [package name]
+</code></pre>
+</div>
+<p>The command also update that package if it has already installed.</p>
+
+<h3 id="to-install-a-package-without-its-recommends-this-is-the-case-of-installing-a-minimal-ubuntudebian-desktop">To install a package without its recommends (this is the case of installing a minimal Ubuntu/Debian desktop)</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install --no-install-recommends [package name]
+</code></pre>
+</div>
+
+<h3 id="to-remove-a-package">To remove a package</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get remove [package name]
+</code></pre>
+</div>
+<p>To remove a package along with all of its configuration file</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get --purge remove [package name]
+</code></pre>
+</div>
+
+<h3 id="to-find-information-about-installed-or-can-be-installed-packages">To find information about installed or can be installed packages</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-cache search [package name/ related word]
+</code></pre>
+</div>
+<p>For instance, you can search for the key word “image viewer” to find all  the info about image viewer in repositories.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-cache search “image viewer”
+</code></pre>
+</div>
+
+<h3 id="to-list-dependencies-and-recommends-of-a-packages">To list dependencies and recommends of a packages</h3>
+
+<p>It’s very useful when you trying to install a minimal Ubuntu system (mostly by using the <strong>”–no-install-recommends”</strong> flag) and sometimes find that some applications are lacking features (you need to installs some more of it recommends).</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-cache depends [package name]
+</code></pre>
+</div>
+
+<h3 id="to-show-the-version-of-a-package-and-which-repository-it-is-come-from">To show the version of a package and which repository it is come from</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-cache policy [package-name]
+</code></pre>
+</div>
+
+<h3 id="to-find-out-about-information-about-a-package">To find out about information about a package</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-cache show [package-name]
+</code></pre>
+</div>
+<h3 id="dpkg">dpkg</h3>
+<p>Although not using apt but I find the below is a essential command to supplement to apt features.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>dpkg -s [package name]
+</code></pre>
+</div>
+<p>In fact, I often use it rather than apt-cache show/policy.</p>
+
+<p>In my experience, with just all these commands, you can effectively manage your applications and your Ubuntu system.</p>
