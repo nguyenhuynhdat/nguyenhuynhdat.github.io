@@ -2,11 +2,11 @@
 layout: default
 ---
 
-# Greeting from Vietnam
+# Greeting from Vietnam!
 
 Hi you all,
 
-My name is Dat and I am from Vietnam. I learned Linux as a hobby years ago but eventually nowadays, I am using Linux on everything I can (my desktop with Ubuntu LTS, my laptop with Debian Jessie or my Raspberry Pi with Runeaudio).
+My name is Dat and I am from Vietnam. I learned Linux as a hobby years ago but eventually nowadays, I am using the OS on everything I can (my desktop with Ubuntu LTS, my laptop with Debian Jessie or my Raspberry Pi with Runeaudio - an Arch).
 
 This site is created out of the love for Debian/ Ubuntu and Openbox. Although the though of "who am I to write this kind of tutorial?" is always lurking at the back of my mind, writing it has been a journey of pure joy.
 
@@ -18,7 +18,7 @@ Hope you will enjoy your read and found my information helpful!
 
 Best regards,
 
-Dat Huynh Nguyen
+**Dat Huynh Nguyen**
 
 # Why Ubuntu?
 
