@@ -121,7 +121,7 @@ hr { height: 0; border: 0; border-bottom: 1px dashed #b5e853; color: #b5e853; }
 
 .btn .icon { display: inline-block; width: 16px; height: 16px; margin: 1px 8px 0 0; float: left; }
 
-.btn-github .icon { opacity: 0.6; background: url("../images/blacktocat.png") 0 0 no-repeat; }
+.btn-github .icon { opacity: 0.6; background: url("/assets/images/blacktocat.png") 0 0 no-repeat; }
 
 .btn-home .icon { opacity: 0.6; background: url("../images/home-icon.png") 0 0 no-repeat; }
 
