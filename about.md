@@ -1,5 +1,7 @@
 ---
 layout: default
+title: ABOUT ME
+description: ""
 ---
 
 # Greeting from Vietnam!
