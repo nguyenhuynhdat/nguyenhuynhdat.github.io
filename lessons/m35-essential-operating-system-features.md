@@ -61,7 +61,7 @@ You should get sound work immediately, if not, follow by entering this command:
 ```
 alsactl init
 ```
-In your terminal using the command Alsamixer to open the mixer and using SPACE to unmute all the channels.
+In your terminal using the command Alsamixer to open the mixer and pressing "SPACE" key to unmute all the channels.
 ```
 alsamixer
 ```

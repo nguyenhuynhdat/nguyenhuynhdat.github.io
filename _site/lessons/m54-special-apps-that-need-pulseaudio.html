@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=369c0a04289004d4c313e75cc7c55e6d06ebe574">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/m54-special-apps-that-need-pulseaudio.html">
+        <section id="downloads">
+          
+            <a href="/lessons/lessons.html" class="btn btn-github"><span class="icon"></span>All The Lessons</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>OFFICE APPLICATIONS</h1>
+      <p> install a word processor, a spreedsheet, a pdf reader and an ebook reader. </p>
+        <p>When it come to audio, Linux actually falls short comparing to its rival Mac OS or Windows (I use various Audio cards on my Windows PC. With Windows, it’s just a breeze). I am no expert on this audio business but I have use Debian/Ubuntu for a long time and all of my problems with audio often came from Pulseaudio. Thus, in this guide, I tried my best to avoid using it. Despite of that reason, in real life some of my day to day application specifically need Pulseaudio!</p>
+
+<p>to install pulseaudio</p>
+
+<p>sudo apt-get install pulseaudio</p>
+
+<p>[spacer height=”25px”]</p>
+<ol>
+  <li>Skype as VOIP client</li>
+</ol>
+
+<p>http://www.skype.com/en/</p>
+
+<p>First you need to enable “partners” repository:</p>
+
+<p>Sudo nano /etc/apt/sourcelist</p>
+
+<p>Comment out the line (delete the # at the beginning of the line):</p>
+
+<p>##Skype
+#deb http://archive.canonical.com/ubuntu/ trusty partner</p>
+
+<p>Then</p>
+
+<p>Sudo apt-get update</p>
+
+<p>Sudo apt-get install skype</p>
+
+<p>Login and you all set!</p>
+
+<p>Below is the actual screenshot on my Laptop.</p>
+
+<p>Skype</p>
+<ol>
+  <li>Kazam as screen recording</li>
+</ol>
+
+<p>https://apps.ubuntu.com/cat/applications/kazam/</p>
+
+<p>My freelancer job requires a lot of short video demonstrating my instructions. Kazam is easier to use, let you choose one from various installed microphones, records the screen nicely with great output (small size and in HD resolution).</p>
+
+<p>Sudo apt-get install kazam</p>
+
+<p>Kazam</p>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox.com/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a> | facebook <a href="https://facebook.com/ubuntuopenbox" title="facebook">facebook.com/ubuntuopenbox</a>.</p>
+</footer>
+
+      
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,15 +1,19 @@
 ---
 layout: default
 title: OVERVIEW OF THE INSTALLATION
-description: go through the steps you will take and the packages you will install.
+description: Go through the steps you will take and the packages you will install.
 ---
 
 ## Goal of this lesson:
-The following is an outline of how your learning experience will like. I will introduce the core concepts and the steps we will take without actually doing any thing, rather it will give you the full picture of how Openbox and other components are put together to form a complete Ubuntu Openbox system. Reading through this overview should help you to avoid initial frustrations and ultimately help you to better understand all the up coming lesson.
+The following is an outline of how your learning experience.
+
+I will only introduce the core concepts and the steps we will take without actually doing any thing, rather it will give you the full picture of how Openbox and other components are put together to form a complete Ubuntu Openbox system.
+
+Reading through this overview should help you to avoid initial frustrations and ultimately help you to better understand all the up coming lessons.
 
 ## Core concepts:
 ### Window Manager Vs. Desktop Environment
-To understand what Openbox actually is, it's important to know the difference between a window manager and a desktop environment.
+To understand what Openbox actually is, it's important to know the differences between a window manager and a desktop environment.
 
 >A window manager is the program which draws on your screen the "box" in which the program is run. A window manager controls how your program window works, looks and acts. It decides what window decorations to use and gives you a way to move the windows, hide them, resize them, minimize them and close them. It controls what buttons you push to do those things, and what keys you press to make those things happen.
 

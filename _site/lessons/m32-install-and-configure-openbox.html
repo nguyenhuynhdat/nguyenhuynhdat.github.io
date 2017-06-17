@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=e00e47df773e8b6045096c38155d0010d345f89e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=369c0a04289004d4c313e75cc7c55e6d06ebe574">
     <title>Ubuntu Openbox by nguyenhuynhdat</title>
   </head>
 
@@ -48,21 +48,19 @@
 
 <h3 id="2-configure-openbox">2. Configure Openbox:</h3>
 
-<p>After Step 1, reboot your system and login it for the first time. If a grayish screen are there greeting you (with mouse point). Your Openbox system is ready for further configuration.</p>
+<p>After Step 1, reboot your system and login for the first time. If a grayish screen are there greeting you (with mouse point). Your Openbox system is ready for further configuration.</p>
 
-<p>There are somethings that I should tell you about our upcoming system. If you come from a Windows world, you might expect that you can click a shortcut (icon) on your desktop to call an application. There will be no such thing in our system. The job of creating icon on your desktop is called <strong><em>“managing desktop”</em></strong> and it is the service of a File Manager. There are some File Managers that can but Thunar is not one of them (they are: Nautilus, PCManFM…).</p>
+<p><img src="/images/freshopenbox.jpg" alt="freshopenbox" /></p>
 
-<p>But I still choose Thunar because in my opinion the feature is redundant and unnecessary with Openbox. With its right clicking menu and shortcut keys, you will feel the superior of these methods is far over finding an icon on your desktop to click.</p>
+<p>There are somethings that I should tell you about our upcoming system. If you come from a Windows world, you might expect that you can click a shortcut (icon) on your desktop to call an application. There will be no such thing in our system. The job of creating icon on your desktop is called <strong><em>“managing desktop”</em></strong> and it is the service of a File Manager.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>* ***Right-click menu***:
-
-By right clicking your mouse, there is a menu of applications. Click to any app to call it. But at the moment, you only can call Terminator (the terminal entry) or Firefox browser (the Web browser entry)
-
-* ***Shortcut keys***:
-
-Pressing the Windows key (the key that have “Microsoft Icon” on it) and the key T: **Windows + T**, the Terminator terminal should be started. The shortcut key will improve your productivity after you have familiar with it. Openbox let you choose shortcut keys freely. In later part of this chapter I will show you how to create your own shortcut keys.
-</code></pre>
-</div>
+<p>In my opinion, the feature is redundant and unnecessary with Openbox. With its right clicking menu and shortcut keys, you will feel the superior of these methods is far over finding an icon on your desktop to click.</p>
+<ul>
+  <li><strong><em>Right-click menu:</em></strong>
+By right clicking your mouse, there is a menu of applications. Click to any app to call it. But at the moment, you only can call Terminator (the terminal entry) or Firefox browser (the Web browser entry).</li>
+  <li><strong><em>Shortcut keys:</em></strong>
+Pressing the Windows key (the key that have “Microsoft Icon” on it) and the key T: <strong>Windows + T</strong>, the Terminator terminal should be started. The shortcut key will improve your productivity after you have familiar with it. Openbox let you choose shortcut keys freely. In later part of this chapter I will show you how to create your own shortcut keys.</li>
+</ul>
 
 <p>At the moment, your system will look a bit ugly comparing to modern standard. You will learn how to make your Openbox system looks decent in some later chapters. In Linux world, some of us really do not care much about the look. I have seen some minimalists using only tiling window manager with just wallpaper on the screen (They even go as far as not using any mouse at all).</p>
 
@@ -70,15 +68,11 @@ Pressing the Windows key (the key that have “Microsoft Icon” on it) and the 
 
 <p>From now on we will add more features to our Openbox:</p>
 
-<ol>
-  <li>Open this guide on Firefox browser:</li>
-</ol>
+<p><strong>2.1. Open this guide on Firefox browser:</strong></p>
 
-<p>The reason for telling you to install Firefox at the very beginning is for you to read this guide while installing your system (and also saving you some time by copying/ pasting commands directly from my website). Right-click, then choose “Web Browser” to start Firefox browser, go to <a href="UbuntuOpenbox.com/lessons">UbuntuOpenbox.com/lessons</a>.</p>
+<p>The reason for telling you to install Firefox at the very beginning is for you to read this guide while installing your system (and also saving you some time by copying/ pasting commands directly from my website). Right-click, then choose “Web Browser” to start Firefox browser, go to <a href="UbuntuOpenbox.com/lessons/lessons.html" target="_blank">UbuntuOpenbox.com/lessons/lessons.html</a>.</p>
 
-<ol>
-  <li>Creating the seed configuration files:</li>
-</ol>
+<p><strong>2.2. Creating the seed configuration files:</strong></p>
 
 <p>The configuration of Openbox is defined within three files: <strong>rc.xml</strong>, <strong>menu.xml</strong>, <strong>autostart</strong>.</p>
 
@@ -101,9 +95,7 @@ Pressing the Windows key (the key that have “Microsoft Icon” on it) and the 
 </code></pre>
 </div>
 
-<ol>
-  <li>Configure Openbox:</li>
-</ol>
+<p><strong>2.3. Configure Openbox:</strong></p>
 
 <p>We will configure the above seed files one by one:</p>
 
@@ -111,30 +103,14 @@ Pressing the Windows key (the key that have “Microsoft Icon” on it) and the 
 
 <p>We have some programs for auto generating right click menu, but I always find the auto generated menu too messy. I like to manually manage it.</p>
 
-<p>We will use my current configuration here on Pastebin.
+<p>We will use my current configuration here: <a href="https://pastebin.com/5Cixsqpa" target="_blank">https://pastebin.com/5Cixsqpa</a>.
 Then replace the current content of <strong>menu.xml</strong> with mine:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.config/openbox/menu.xml
 </code></pre>
 </div>
 <p>then Save</p>
 
-<p>With my menu we need to make the SHUTDOWN entry work by making the “sudo poweroff” command effective without entering password.</p>
-
-<p>We have to edit the <strong>/etc/sudoer</strong> file.</p>
-
-<p>Open <em>sudo</em> configuration file (sudoer) in the nano text editor by this command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo visudo
-</code></pre>
-</div>
-<p>Add this line to the end it:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>user_name ALL=(ALL) NOPASSWD: /sbin/poweroff
-</code></pre>
-</div>
-<p>Ctrl + O to save the file and Ctrl + X to exit. (or just Ctrl + X and type “Yes” when it asks you to save)</p>
-
-<p>Keep in mind that this <strong>sudoer</strong> file is <strong><em>extremely</em></strong> important. If it is messed up, you are in serious trouble. <strong>ALWAYS</strong> edit this file with the command <strong>visudo</strong> (that mean using <strong>nano</strong> text editor only, no <strong>Geany</strong> whatsoever!) and be careful!</p>
-
-<p>Now the shutdown entry on your Right-click menu should work!</p>
+<p><img src="/images/geanymenu.png" alt="geanymenu" /></p>
 
 <p><em><strong>autostart</strong></em></p>
 
@@ -146,7 +122,7 @@ Then replace the current content of <strong>menu.xml</strong> with mine:</p>
 </div>
 <p>The command mean: delay 3 second before starting <strong>lxpanel</strong>.</p>
 
-<p>We are also using mine <strong>autostart</strong> file. Here is its link on Pastebin.</p>
+<p>We are also using mine <strong>autostart</strong> file. Here is its link: <a href="https://pastebin.com/EmY8gx9c" target="_blank">https://pastebin.com/EmY8gx9c</a>.</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.config/openbox/autostart
 </code></pre>
@@ -156,49 +132,54 @@ Then replace the current content of <strong>menu.xml</strong> with mine:</p>
 
 <p>This file helds the configuration for all the shotrcut-keys and define how an application will appear on the screen. How to modifying the file is really easy. Below is the typical entry:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;keybind key="W-t"&gt;
-      &lt;action name="Execute"&gt;
-        &lt;startupnotify&gt;
-          &lt;enabled&gt;true&lt;/enabled&gt;
-          &lt;name&gt;Terminal&lt;/name&gt;
-        &lt;/startupnotify&gt;
-        &lt;command&gt;terminator&lt;/command&gt;
-      &lt;/action&gt;
-    &lt;/keybind&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;keybind key="W-t"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;startupnotify&gt;
+      &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;name&gt;Terminal&lt;/name&gt;
+    &lt;/startupnotify&gt;
+    &lt;command&gt;terminator&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
 </code></pre>
 </div>
-<p>Just change the combination keys **‘<keybind key="W-t">'** and the command **'<command />terminator&lt;/command&gt;'** respectively and you will have a shortcut-key.</keybind></p>
+<p>Just change the combination keys <strong>“W-t”</strong> and the command <strong>“terminator”</strong> respectively and you will have a new shortcut-key.</p>
 
 <p>Somethings you need to be noted:</p>
 
 <ul>
-  <li>The capital W: the Windows key <a href="/images/windowsicon.png">windows key</a></li>
+  <li>The capital W: the Windows key which have this icon:  <img src="/images/windowsicon.png" alt="windowskey" /></li>
   <li>The capital A: the Alt key</li>
   <li>The capital S: the Shift key</li>
   <li>The capital C: the Control key</li>
 </ul>
 
-<p>Click to the link to go to my rc.xml file on pastebin. Copy the content and replace the current content of <strong>rc.xml</strong> file. <strong>Mind you</strong>, the content is really long!</p>
+<p>Go to my <strong>rc.xml</strong> file here: <a href="https://pastebin.com/ajfTFaay" target="_blank">https://pastebin.com/ajfTFaay</a>. Copy the content and replace the current content of <strong>rc.xml</strong> file. <strong>Mind you</strong>, the content is really long!</p>
 
-<p>To open the rc.xml file with Geany:</p>
+<p>To open the <strong>rc.xml</strong> file with Geany:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>geany ~/.config/openbox/rc.xml
 </code></pre>
 </div>
 
 <p>Restart your computer for all the change to take effect.</p>
 
-<h3 id="4-using-obmenu-to-edit-menu">4. Using <strong>Obmenu</strong> to edit menu:</h3>
+<h3 id="3-using-obmenu-to-edit-menu">3. Using <strong>Obmenu</strong> to edit menu:</h3>
 
-<p>Although edit the menu.xml text file directly is easy, you can use a program called <strong>Obmenu</strong> to edit the file using GUI.</p>
+<p>Although edit the <strong>menu.xml</strong> text file directly is easy, you can also use a program called <strong>Obmenu</strong> to edit the file using GUI.</p>
 
 <p>To install:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install Obmenu
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install obmenu
 </code></pre>
 </div>
+<p>To call it:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>obmenu
+</code></pre>
+</div>
+<p><img src="/images/obmenu.png" alt="obmenu" /></p>
 
           <footer role="contentinfo" class="page-footer">
 <p class="top-link"><a href="#top">return to top</a></p>
-<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a>.</p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox.com/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a> | facebook <a href="https://facebook.com/ubuntuopenbox" title="facebook">facebook.com/ubuntuopenbox</a>.</p>
 </footer>
 
       

@@ -1,12 +1,8 @@
-[spacer height="20px"]
-Module 5 - Everyday applications
-
-[spacer height="20px"]
-[spacer height="20px"]
-Chapter 4 - Special apps that need Pulseaudio
-
-[spacer height="20px"]
-
+---
+layout: default
+title: OFFICE APPLICATIONS
+description: install a word processor, a spreedsheet, a pdf reader and an ebook reader.
+---
 When it come to audio, Linux actually falls short comparing to its rival Mac OS or Windows (I use various Audio cards on my Windows PC. With Windows, it's just a breeze). I am no expert on this audio business but I have use Debian/Ubuntu for a long time and all of my problems with audio often came from Pulseaudio. Thus, in this guide, I tried my best to avoid using it. Despite of that reason, in real life some of my day to day application specifically need Pulseaudio!
 
 to install pulseaudio
