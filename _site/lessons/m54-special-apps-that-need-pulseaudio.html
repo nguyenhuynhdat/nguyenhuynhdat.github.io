@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=a2a500cbabea07c89c1166b7760627ef9c5ee80d">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b5846818cb32db352b66829f7ff1c3c28dc3453e">
     <title>Ubuntu Openbox by nguyenhuynhdat</title>
   </head>
 
@@ -23,52 +23,29 @@
 
     <div class="container">
       <section id="main_content">
-      <h1>OFFICE APPLICATIONS</h1>
-      <p> install a word processor, a spreedsheet, a pdf reader and an ebook reader. </p>
-        <p>When it come to audio, Linux actually falls short comparing to its rival Mac OS or Windows (I use various Audio cards on my Windows PC. With Windows, it’s just a breeze). I am no expert on this audio business but I have use Debian/Ubuntu for a long time and all of my problems with audio often came from Pulseaudio. Thus, in this guide, I tried my best to avoid using it. Despite of that reason, in real life some of my day to day application specifically need Pulseaudio!</p>
+      <h1>SPECIAL APPS</h1>
+      <p> Applications that require PulseAudio to be installed. </p>
+        <p>When it come to audio, Linux actually falls short comparing to its Windows rival (I use various Audio cards on my Windows PC. With Windows, it’s just a breeze). I am no expert on this audio business but I have use Debian/Ubuntu for a long time and all of my problems with audio often came from PulseAudio. Thus, in this guide, I tried my best to avoid using it. Despite of that reason, in real life some of my day to day application specifically need Pulseaudio!</p>
 
-<p>to install pulseaudio</p>
+<h3 id="1-skype-as-voip-client">1. Skype as VOIP client</h3>
 
-<p>sudo apt-get install pulseaudio</p>
+<p>Here is the detail instruction from Debian to install the latest Skype:</p>
 
-<p>[spacer height=”25px”]</p>
-<ol>
-  <li>Skype as VOIP client</li>
-</ol>
+<p><a href="https://wiki.debian.org/skype">https://wiki.debian.org/skype</a></p>
 
-<p>http://www.skype.com/en/</p>
+<h3 id="2-kazam-as-screen-recording-app">2. Kazam as screen recording app</h3>
 
-<p>First you need to enable “partners” repository:</p>
+<p><a href="https://launchpad.net/kazam">https://launchpad.net/kazam</a></p>
 
-<p>Sudo nano /etc/apt/sourcelist</p>
+<p>My freelancer job requires a lot of short videos demonstrating how my scripts work. I use Kazam for the task.</p>
 
-<p>Comment out the line (delete the # at the beginning of the line):</p>
+<p>Kazam is easier to use, let you choose one from various installed microphones, records the screen nicely with great output (small size and in HD resolution).</p>
 
-<p>##Skype
-#deb http://archive.canonical.com/ubuntu/ trusty partner</p>
-
-<p>Then</p>
-
-<p>Sudo apt-get update</p>
-
-<p>Sudo apt-get install skype</p>
-
-<p>Login and you all set!</p>
-
-<p>Below is the actual screenshot on my Laptop.</p>
-
-<p>Skype</p>
-<ol>
-  <li>Kazam as screen recording</li>
-</ol>
-
-<p>https://apps.ubuntu.com/cat/applications/kazam/</p>
-
-<p>My freelancer job requires a lot of short video demonstrating my instructions. Kazam is easier to use, let you choose one from various installed microphones, records the screen nicely with great output (small size and in HD resolution).</p>
-
-<p>Sudo apt-get install kazam</p>
-
-<p>Kazam</p>
+<p>All instructing videos of this website are recorded using Kazam too.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install kazam
+</code></pre>
+</div>
+<p><img src="/images/kazam.jpg" alt="kazam" /></p>
 
           <footer role="contentinfo" class="page-footer">
 <p class="top-link"><a href="#top">return to top</a></p>

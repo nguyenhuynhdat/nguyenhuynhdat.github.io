@@ -1,14 +1,18 @@
 ---
 layout: default
 title: OPENBOX THEME
-description: install an Openbox theme.
+description: ""
 ---
 
-An openbox theme will define the look of the border + the title bar + the right click menu.
+An openbox theme will define the look of the border + the title bar + the right click menu...
+
+To install a theme, often we just have to copy its folder to a specific theme folder.
+
+To change Openbox theme, we use **obconf**.
+
+## Mistral Theme
 
 ![Openboxtheme]({{site.baseurl}}/images/Mistral-Theme.jpg)
-
-Mistral Theme
 
 At the beginning of my Openbox experience, I used the default theme of Crunchbang and it still is pretty good. Now I am using a theme call **Mistral**.
 
@@ -16,7 +20,7 @@ The author has posted it here:
 
 [http://phobi4n.deviantart.com/art/Mistral-Openbox-543910044](http://phobi4n.deviantart.com/art/Mistral-Openbox-543910044)
 
-This is one of the some rare Openbox themes that I can recommend, others are often very spartan and have very few sense of modern.
+This is one of the some rare Openbox themes that I can recommend, others are often very spartan and have very few sense of modern look.
 
 In this case of Mistral, the theme is contained in a folder, but Openbox themes also come with .obt extension and can be installed using Obconf. You also can extracted that .obt package to a folder using any of compression tool.
 
@@ -31,4 +35,4 @@ Open **Obconf** by typing the command **obconf** into terminal. Select Mistral t
 
 ![obconf]({{site.baseurl}}/images/obconf.png)
 
-I have to say that although it is easy, at the beginning I struggled to know all of these. Hope all the articles on this website will save you some time!
+I have to say that although it is easy, at the beginning I struggled to know all of these (I could not find any instruction for this anywhere). Hope all the articles on this website will save you some time!

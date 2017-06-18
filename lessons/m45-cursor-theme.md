@@ -1,12 +1,12 @@
 ---
 layout: default
 title: CURSOR THEME
-description: install an cursor theme.
+description: ""
 ---
 
-My mother once complained that the cursor on her Sony TV (connected to a PC) was a bit small for her eyes.
+My mother once complained that the cursor on her 40 inches Sony TV (connected to a PC) was a bit small for her eyes.
 
-I know that there are cursor themes but have never bothered to look into it and have used the default cursor of Debian for years. After some searching, I found one called **Breeze**, a series of beautiful cursor theme:
+I know that there were cursor themes but had never bothered to look into  and had used the default cursor of Debian/ Ubuntu for years. After some searching, I found one called **Breeze**, a series of beautiful cursor theme:
 
 ![breeze cursor theme]({{site.baseurl}}/images/mousebreezegif.gif)
 
@@ -20,6 +20,6 @@ It comes with various color patterns and sizes, for left hand and right hand:
 
 To install a cursor theme in Openbox:
 
-Download the theme package, decompress it into ~/.icon/ folder on your home directory.
+Download the theme package, decompress it into **~/.icon/** folder on your home directory.
 
-Open **lxappearance** > **Mouse cursor** tab > find the set of **Breeze** cursor you desire > **apply**. You may need to restart your system for the change to take effect globally (system wide).
+Open **lxappearance** > **Mouse cursor** tab > find the set of **Breeze** cursor you desire > **apply**. You need to restart your system for the change to take effect globally (system wide), because cursor theme cannot be changed on the fly.

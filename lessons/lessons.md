@@ -72,7 +72,7 @@ Illustrate the installation of my favorite Openbox theme, **Mistral**
 
 Illustrate an installation of a my favorite GTK theme, **FlatStudioGray**
 
-[Chapter 4 - Icon theme for Ubuntu Openbox]({{site.baseurl}}/lessons/m44---icon-themes-for-ubuntu-openbox.html){:target="_blank"}
+[Chapter 4 - Icon theme for Ubuntu Openbox]({{site.baseurl}}/lessons/m44-icon-themes-for-ubuntu-openbox.html){:target="_blank"}
 
 Illustrate a installation of my favorite icon theme, **AwOken**
 
@@ -93,6 +93,10 @@ Media player (**Vlc**), music player (**Audacious/ Cmus**), video and audio conv
 [Chapter 3 - Office Apps]({{site.baseurl}}/lessons/m53-office-apps-for-ubuntu-openbox.html){:target="_blank"}
 
 Word processors (**LibreOffice Writer**), Spreadsheet (**Libre Office Calc**), Pdf reader (**qpdfview**) and ebook reader (**FB reader**)
+
+[Chapter 4 - Special apps that need PulseAudio Apps]({{site.baseurl}}/lessons/m54-special-apps-that-need-pulseaudio.html){:target="_blank"}
+
+VOIP (**Skype**), Screen recording app (**Kazam**)
 
 ## Module 6 - Some Insights on Debian/ Ubuntu system
 

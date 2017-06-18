@@ -1,45 +1,26 @@
 ---
 layout: default
-title: OFFICE APPLICATIONS
-description: install a word processor, a spreedsheet, a pdf reader and an ebook reader.
+title: SPECIAL APPS
+description: Applications that require PulseAudio to be installed.
 ---
-When it come to audio, Linux actually falls short comparing to its rival Mac OS or Windows (I use various Audio cards on my Windows PC. With Windows, it's just a breeze). I am no expert on this audio business but I have use Debian/Ubuntu for a long time and all of my problems with audio often came from Pulseaudio. Thus, in this guide, I tried my best to avoid using it. Despite of that reason, in real life some of my day to day application specifically need Pulseaudio!
+When it come to audio, Linux actually falls short comparing to its Windows rival (I use various Audio cards on my Windows PC. With Windows, it's just a breeze). I am no expert on this audio business but I have use Debian/Ubuntu for a long time and all of my problems with audio often came from PulseAudio. Thus, in this guide, I tried my best to avoid using it. Despite of that reason, in real life some of my day to day application specifically need Pulseaudio!
 
-to install pulseaudio
+### 1. Skype as VOIP client
 
-sudo apt-get install pulseaudio
+Here is the detail instruction from Debian to install the latest Skype:
 
-[spacer height="25px"]
-1. Skype as VOIP client
+[https://wiki.debian.org/skype](https://wiki.debian.org/skype)
 
-http://www.skype.com/en/
+### 2. Kazam as screen recording app
 
-First you need to enable “partners” repository:
+[https://launchpad.net/kazam](https://launchpad.net/kazam)
 
-Sudo nano /etc/apt/sourcelist
+My freelancer job requires a lot of short videos demonstrating how my scripts work. I use Kazam for the task.
 
-Comment out the line (delete the # at the beginning of the line):
+Kazam is easier to use, let you choose one from various installed microphones, records the screen nicely with great output (small size and in HD resolution).
 
-##Skype
-#deb http://archive.canonical.com/ubuntu/ trusty partner
-
-Then
-
-Sudo apt-get update
-
-Sudo apt-get install skype
-
-Login and you all set!
-
-Below is the actual screenshot on my Laptop.
-
- Skype
-2. Kazam as screen recording
-
-https://apps.ubuntu.com/cat/applications/kazam/
-
-My freelancer job requires a lot of short video demonstrating my instructions. Kazam is easier to use, let you choose one from various installed microphones, records the screen nicely with great output (small size and in HD resolution).
-
-Sudo apt-get install kazam
-
-Kazam
+All instructing videos of this website are recorded using Kazam too.
+```
+sudo apt-get install kazam
+```
+![kazam]({{site.baseurl}}/images/kazam.jpg)

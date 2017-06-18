@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=a2a500cbabea07c89c1166b7760627ef9c5ee80d">
+    <link rel="stylesheet" href="/assets/css/style.css?v=b5846818cb32db352b66829f7ff1c3c28dc3453e">
     <title>Ubuntu Openbox by nguyenhuynhdat</title>
   </head>
 
@@ -24,12 +24,14 @@
     <div class="container">
       <section id="main_content">
       <h1>ICON THEME</h1>
-      <p> install and configure an icon theme. </p>
-        <p>Take a look at two Thunar windows in the screenshot. I have applied “AwOken” icon set (its name is really written like that, not a typo)</p>
+      <p>  </p>
+        <p>Take a look at two Thunar windows in the <a href="/screenshots.html" target="_blank"><strong>screenshots</strong></a>. I have applied “AwOken” icon set (its name is really written like that, not a typo)</p>
 
-<p>To install a icon theme, either install via PPAs or copy (the extracted) icon folder directly to /usr/share/icons or ~/.icons</p>
+<p><a href="/images/busyDesktop.png" target="_blank"><img src="/images/busyDesktop.png" alt="busyDesktop" /></a></p>
 
-<p>Adding a PPA is often frowned upon, but since the PPA for AwOken theme is really popular. The risk is low!</p>
+<p>To install a icon theme, either install via PPAs or copy (the extracted) icon folder directly to <strong>/usr/share/icons or ~/.icons</strong></p>
+
+<p>Adding a PPA is often frowned upon, but since the PPA for AwOken theme is really popular. The risk is low, I think ;) !</p>
 
 <p>You need to install <strong>software-properties-common</strong> to be able to add PPA using command line, to install it:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install software-properties-common
@@ -39,13 +41,17 @@
 
 <p>http://gnome-look.org/content/show.php/AwOken?content=126344</p>
 
-<p>sudo add-apt-repository ppa:alecive/antigone</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo add-apt-repository ppa:alecive/antigone
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install awoken-icon-theme
+</code></pre>
+</div>
 
-<p>sudo apt-get update</p>
-
-<p>sudo apt-get install awoken-icon-theme</p>
-
-<p>AwOken is a special theme that have it own script to customize itself, here is the instruction given by the author, skim through it and you will see how awesome it is: <a href="/assets/Installation_and_Instructions.pdf">Installation and Instructions (PDF)</a></p>
+<p>AwOken is a special theme that have it own script to customize itself, here is the instruction given by the author, skim through it and you will see how awesome it is: <a href="/assets/Installation_and_Instructions.pdf" target="_blank">Installation and Instructions (PDF)</a></p>
 
 <p>Or if you want to learn by doing, below is the command to trigger all the options. The instruction a long the way is easy to understand and follow:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>awoken-icon-theme-customization
@@ -53,7 +59,7 @@
 </div>
 <p>Apply the icon theme.</p>
 
-<p>Open Lxappearance to change the icon-theme to AwOken.</p>
+<p>Open <strong>Lxappearance</strong> to change the icon-theme to AwOken.</p>
 
 <p>Here is how the icon theme is on my system:</p>
 

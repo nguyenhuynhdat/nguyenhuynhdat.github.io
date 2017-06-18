@@ -1,7 +1,7 @@
 ---
 layout: default
 title: INTERNET APPLICATIONS
-description: install a web browser, an email client, a torrent client and a download manager .
+description: We will install a web browser, an email client, a torrent client and a download manager .
 ---
 
 ### 1. Firefox as web browser
@@ -18,11 +18,13 @@ Firefox has the ability to extend its default features by adding add-on. Here ar
 
     * **Flashgot**: integrate downloads in Firefox with favourite download manager (more on this later with Uget) [https://addons.mozilla.org/en-US/firefox/addon/flashgot/](https://addons.mozilla.org/en-US/firefox/addon/flashgot/)
 
+    * **Print Edit**: "Allows editing of web page content while in Print Preview mode, prior to printing or saving as HTML or PDF. Compacts the layout and removes unwanted content such as adverts, sidebars and blank pages. Any element can be formatted, hidden or deleted."   [https://addons.mozilla.org/en-US/firefox/addon/print-edit/](https://addons.mozilla.org/en-US/firefox/addon/print-edit/)
+
 ### 2. Thunderbird as email client
 
 [https://www.mozilla.org/en-US/thunderbird/](https://www.mozilla.org/en-US/thunderbird/)
 
-Email manager help you to effective manage your email. If you are familiar with Microsoft Outlook then in Linux, a very competent alternative is Thunderbird.
+Email client help you to effectively manage your emails. If you are familiar with Microsoft Outlook, then in Linux, there is a very competent alternative, Thunderbird.
 ```
 sudo apt-get install thunderbird
 ```
@@ -32,7 +34,7 @@ Just add your email address and you are all set.
 
 [http://www.transmissionbt.com/](http://www.transmissionbt.com/)
 
-Transmission gives you the ability to download from both torrent file and magnet link. I have never had any more requirement for a torrent client beyond those two feature. Transmission just get the job done for me. To install:
+Transmission gives you the ability to download from both torrent files and magnet links. I have never had any more requirement for a torrent client beyond those two features. Transmission just get the job done for me. To install:
 ```
 sudo apt-get install transmission
 ```
@@ -41,7 +43,7 @@ sudo apt-get install transmission
 
 [http://ugetdm.com/](http://ugetdm.com/)
 
-I used to feel that all the download managers in Linux will never be as good as **Internet Download Manager** in Windows platform but changed my mind after finding **Uget**.
+I used to feel that all the download managers in Linux would never be as good as **Internet Download Manager** in Windows platform, but changed my mind after finding **Uget**. Yeah, it is that good!
 
 **Uget** is a java based app with a modern looking interface and does the job nicely.
 ```
@@ -52,7 +54,7 @@ apt-get install uget
 
 [https://www.dropbox.com/](https://www.dropbox.com/)
 
-In my own experience, of all cloud storage suppliers, **Dropbox** is the nicest regarding its fluently synchronization between multiple platforms. Out of the box, it gives you 2 Gb of free space. With my usage of mainly documents, it is plenty enough.
+In my own experience, of all cloud storage suppliers, **Dropbox** is the nicest regarding its fluent synchronization between multiple platforms. Out of the box, it gives you 2 Gb of free space. With my usage of mainly documents, it is plenty enough.
 ```
 sudo apt-get install dropbox
 ```
