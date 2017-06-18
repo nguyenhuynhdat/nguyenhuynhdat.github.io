@@ -8,14 +8,16 @@ Here is the image of my current setup for my productive works: A Debian Jessie w
 
 ![birdView]({{site.baseurl}}/images/birdView.jpg)
 
+For more images, please take a look at these  [**screenshots**]({{site.baseurl}}/screenshots.html){:target="_blank"}.
+
 A lot of people use Linux because it is free of charge, but [for me] its true free is about freedom. The freedom of choosing which distributions as OS, which packages for each specific task...
 
 Please keep in mind that this website is showing you only one way choosing packages according to my own preference. The ultimate purpose is to give you a first glimpse of the aforementioned "freedom", to tempt you to explore more the awesome world of Linux.
 
-[Here are the link to all the lessons]({{site.baseurl}}/lessons/lessons.html).
+[**Here are the link to all the lessons.**]({{site.baseurl}}/lessons/lessons.html){:target="_blank"}
 
 You can also click to the "All The Lessons" button in the header of the website to go to the **lessons** page:
 
-![lessonsButton]({{site.baseurl}}/images/lessonsButton.png)
+[![lessonsButton]({{site.baseurl}}/images/lessonsButton.png)]({{site.baseurl}}/lessons/lessons.html){:target="_blank"}
 
 Hope you enjoy all the information!

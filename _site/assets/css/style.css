@@ -123,7 +123,7 @@ hr { height: 0; border: 0; border-bottom: 1px dashed #b5e853; color: #b5e853; }
 
 .btn-github .icon { opacity: 0.6; background: url("../images/ubuntu.png") 0 0 no-repeat; }
 
-.btn-home .icon { opacity: 0.6; background: url("../images/home-icon.png") 0 0 no-repeat; }
+.btn-camera .icon { opacity: 0.6; background: url("../images/Camera-Nexus-icon.png") 0 0 no-repeat; }
 
 /* Links a, a:hover, a:visited
 */
