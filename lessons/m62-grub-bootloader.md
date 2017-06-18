@@ -1,10 +1,8 @@
 ---
 layout: default
 title: GRUB BOOTLOADER
-description: introduce some basic configurations of Grub bootloader.
+description: ""
 ---
-
-## Grub bootloader
 
 >“A bootloader is the first program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.”
 
@@ -65,21 +63,20 @@ GRUB_TIMEOUT=1
 ```
 
 * GRUB_TIMEOUT=**-1** : It will not auto boot but waiting for user to select an entry.
-
 * GRUB_TIMEOUT=**10**: this will wait for 10 second, change the number for how long it will wait.
 
-### Change kernel parameters:
+### 4. Change kernel parameters:
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=Linux acpi_backlight=vendor pcie_aspm=force drm.vblankoffdelay=1 i915.semaphores=1"
 ```
 
 In various cases, especially when you are using a Laptop, for some function can work as expected, you have to specify the kernel parameters. You can do it with Grub by edit the line “GRUB_CMDLINE_LINUX_DEFAULT=...”.
 
-Mine on the ilustrating line above, it is for the LCD display of my desktop can work out right.
+Mine on the illustrating line above, it is for the LCD display of my desktop can work out right.
 
-Each laptop/PC might need specific kernel parameters. So please do research it yourself. I show it here because editing kernel parameters using Grub is such a important feature.
+Each laptop/ PC might need specific kernel parameters. So please do research it yourself. I show it here because editing kernel parameters using Grub is such a important feature.
 
-### Change Grub background:
+### 5. Change Grub background:
 
 This is the most exciting thing with this boring configuration activity. Changing the background of the Grub booting menu.
 
@@ -87,10 +84,10 @@ This is the most exciting thing with this boring configuration activity. Changin
 GRUB_BACKGROUND="/home/dat/GrubBackground.png" #Just specific the path where your background image is stored.
 ```
 
-In Ubuntu I was surprise that I have to add this line manually, but it works wonderfully.
+In Ubuntu 14.04 LTS I was surprise that I had to add this line manually, but it worked wonderfully.
 
 _***FINAL WORDS:***_
 
 With all of of these edits, please note that there are no spaces on any lines (except when in double quotes).
 
-And remember to update your Grub with **sudo update-grub**.
+<span style="color:red">And remember to update your Grub with **sudo update-grub** for the change can take effect.</span>

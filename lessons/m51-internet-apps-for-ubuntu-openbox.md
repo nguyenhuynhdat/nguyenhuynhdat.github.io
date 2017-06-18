@@ -49,6 +49,7 @@ I used to feel that all the download managers in Linux would never be as good as
 ```
 apt-get install uget
 ```
+![breeze cursor theme]({{site.baseurl}}/images/mousebreezegif.gif)
 
 ### 5. Dropbox for cloud storage
 

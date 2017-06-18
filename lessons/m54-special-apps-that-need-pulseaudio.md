@@ -11,6 +11,8 @@ Here is the detail instruction from Debian to install the latest Skype:
 
 [https://wiki.debian.org/skype](https://wiki.debian.org/skype)
 
+![skype]({{site.baseurl}}/images/skype.jpg)
+
 ### 2. Kazam as screen recording app
 
 [https://launchpad.net/kazam](https://launchpad.net/kazam)

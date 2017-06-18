@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=b5846818cb32db352b66829f7ff1c3c28dc3453e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e72cb4526e44a2447c99653443350eb4949343c8">
     <title>Ubuntu Openbox by nguyenhuynhdat</title>
   </head>
 
@@ -27,7 +27,7 @@
       <p> introduce some "house keeping" tasks for a Debian system. </p>
         <h3 id="1-update-your-system-frequently">1. Update your system frequently</h3>
 
-<p>Just be familiar with these two command and you good to go:</p>
+<p>Just be familiar with two below commands and you will be good to go:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
 </code></pre>
 </div>
@@ -35,17 +35,17 @@
 
 <p>This command does not install package, just update information.</p>
 
-<p>This following command will actually install newest version of any package that has been installed in your system (if any).</p>
+<p>The following command will actually install newest version of any package that has been <strong>already</strong> installed in your system (if any).</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get upgrade
 </code></pre>
 </div>
-<p>You should always do it one in a while (I prefer once a week) to keep your system up to date.</p>
+<p>You should always remember to do it one in a while (I prefer once a week) to keep your system up to date.</p>
 
 <p>Or just:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade
 </code></pre>
 </div>
-<p>The <strong>“&amp;&amp;”</strong> part is for telling the terminal only run the <strong>upgrade</strong> command if only the <strong>update</strong> command has been finished.</p>
+<p>The <strong>“&amp;&amp;”</strong> part is for telling the terminal only run the <strong>upgrade</strong> command <strong><em>if only</em></strong> the <strong>update</strong> command has been finished.</p>
 
 <p><em><strong>_TO SUM UP:_</strong></em></p>
 
@@ -58,7 +58,9 @@
 
 <p>Cleaning up the cache of <strong>apt</strong>:</p>
 
-<p><strong>apt</strong> is keeping all the downloaded binary files (.deb) after any of your installation/update has been taken place. These <strong>.deb</strong> file are made available in case you want to reinstall or repair them. That means if you clear this cache, you need to re-download packages should the need arises later.</p>
+<p><strong>apt</strong> is keeping all the downloaded binary files (.deb) after any of your installation/update. It does so to keep these <strong>.debs</strong> file available in case you want to reinstall or repair.</p>
+
+<p>That means if you clear this cache and when the need arises later, you have to re-download.</p>
 
 <p>To see how much apt has been cached <strong>.deb</strong> files:</p>
 
@@ -95,9 +97,9 @@
 </code></pre>
 </div>
 
-<h3 id="3-analyzed-the-usage-of-your-disk-to-find-if-there-is-any-unused-folder-hogging-space">3. Analyzed the usage of your disk to find if there is any unused folder hogging space.</h3>
+<h3 id="3-analyzed-the-usage-of-your-disk-to-track-where-your-disk-space-has-gone">3. Analyzed the usage of your disk to track where your disk space has gone.</h3>
 
-<p>We will use a very good program call baobab (Disk Usage Analyzer).</p>
+<p>We will use a very good program call <strong>Baobab</strong> (Disk Usage Analyzer).</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-get install baobab
 </code></pre>
 </div>
@@ -113,9 +115,11 @@
 
 <p>If you feel that something has gone wrong: suddenly your fan running fast, your computer slowing down… you should use <strong>htop</strong> to find out if there are programs hogging your system resources (using a lot of CPU power or RAM).</p>
 
-<p>Problem like this often happens when there is a program which requires resources that beyond the capability of your system or simply because a program is not configured correctly. For the former case, you have to find another lightweight alternative. For the later, here is my own experience: I used to encounter a problem with my video configuration. The video player did not use GPU power but used CPU power and cause extremely high CPU usage for no obvious reason. After tracking the problem down, I then reconfigured my GPU and everything is fine now.</p>
+<p>Problem like this often happens when there is a program which requires resources that beyond the capability of your system or simply because a program is not configured correctly. For the former case, you have to find another lightweight alternative. For the later, here is my own experience: I used to encounter a problem with my video configuration. The video playback did not use GPU power but used CPU power instead causing extremely high CPU usage for no obvious reason. After tracking the problem down, I then reconfigured my GPU and everything was fine.</p>
 
-<p>These are typical cases that you should using system monitor to detect what is the culprit. You may need to <strong>Kill</strong> that process (to terminate it) for further step can be taken.</p>
+<p>These are typical cases that you should using system monitor to detect which is the culprit.</p>
+
+<p>You may need to <strong>kill</strong> that process (to terminate it) for further step can be taken.</p>
 
 <p>To <strong><em>kill</em></strong> a running program the hard way (force it to close) by using command in terminal when the normal way of clicking the close button on its windows do not have any effect (that program is hanging or something).</p>
 

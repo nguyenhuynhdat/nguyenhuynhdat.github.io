@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=b5846818cb32db352b66829f7ff1c3c28dc3453e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e72cb4526e44a2447c99653443350eb4949343c8">
     <title>Ubuntu Openbox by nguyenhuynhdat</title>
   </head>
 
@@ -24,10 +24,8 @@
     <div class="container">
       <section id="main_content">
       <h1>GRUB BOOTLOADER</h1>
-      <p> introduce some basic configurations of Grub bootloader. </p>
-        <h2 id="grub-bootloader">Grub bootloader</h2>
-
-<blockquote>
+      <p>  </p>
+        <blockquote>
   <p>“A bootloader is the first program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.”</p>
 </blockquote>
 
@@ -88,26 +86,22 @@ GRUB_BACKGROUND="/home/dat/GrubBackground.png"
 </div>
 
 <ul>
-  <li>
-    <p>GRUB_TIMEOUT=<strong>-1</strong> : It will not auto boot but waiting for user to select an entry.</p>
-  </li>
-  <li>
-    <p>GRUB_TIMEOUT=<strong>10</strong>: this will wait for 10 second, change the number for how long it will wait.</p>
-  </li>
+  <li>GRUB_TIMEOUT=<strong>-1</strong> : It will not auto boot but waiting for user to select an entry.</li>
+  <li>GRUB_TIMEOUT=<strong>10</strong>: this will wait for 10 second, change the number for how long it will wait.</li>
 </ul>
 
-<h3 id="change-kernel-parameters">Change kernel parameters:</h3>
+<h3 id="4-change-kernel-parameters">4. Change kernel parameters:</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="quiet splash acpi_osi=Linux acpi_backlight=vendor pcie_aspm=force drm.vblankoffdelay=1 i915.semaphores=1"
 </code></pre>
 </div>
 
 <p>In various cases, especially when you are using a Laptop, for some function can work as expected, you have to specify the kernel parameters. You can do it with Grub by edit the line “GRUB_CMDLINE_LINUX_DEFAULT=…”.</p>
 
-<p>Mine on the ilustrating line above, it is for the LCD display of my desktop can work out right.</p>
+<p>Mine on the illustrating line above, it is for the LCD display of my desktop can work out right.</p>
 
-<p>Each laptop/PC might need specific kernel parameters. So please do research it yourself. I show it here because editing kernel parameters using Grub is such a important feature.</p>
+<p>Each laptop/ PC might need specific kernel parameters. So please do research it yourself. I show it here because editing kernel parameters using Grub is such a important feature.</p>
 
-<h3 id="change-grub-background">Change Grub background:</h3>
+<h3 id="5-change-grub-background">5. Change Grub background:</h3>
 
 <p>This is the most exciting thing with this boring configuration activity. Changing the background of the Grub booting menu.</p>
 
@@ -115,13 +109,13 @@ GRUB_BACKGROUND="/home/dat/GrubBackground.png"
 </code></pre>
 </div>
 
-<p>In Ubuntu I was surprise that I have to add this line manually, but it works wonderfully.</p>
+<p>In Ubuntu 14.04 LTS I was surprise that I had to add this line manually, but it worked wonderfully.</p>
 
 <p><em><strong>*FINAL WORDS:</strong>*</em></p>
 
 <p>With all of of these edits, please note that there are no spaces on any lines (except when in double quotes).</p>
 
-<p>And remember to update your Grub with <strong>sudo update-grub</strong>.</p>
+<p><span style="color:red">And remember to update your Grub with <strong>sudo update-grub</strong> for the change can take effect.</span></p>
 
           <footer role="contentinfo" class="page-footer">
 <p class="top-link"><a href="#top">return to top</a></p>

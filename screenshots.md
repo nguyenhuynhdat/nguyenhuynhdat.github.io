@@ -4,6 +4,8 @@ title: SCREENSHOTS
 description: ""
 ---
 
+<span style="color:red">**(Click on each image to see it larger!)**</span>
+
 ## Tint2 & Conky
 
 ### Clean
@@ -11,6 +13,9 @@ description: ""
 
 ### Busy
 [![Firefox-NitrogenDesktop]({{site.baseurl}}/images/Firefox-NitrogenDesktop.jpg)]({{site.baseurl}}/images/Firefox-NitrogenDesktop.jpg){:target="_blank"}
+
+### Music with Audacious and Sony bluetooth headset
+[![Music-With-Audacious-Bluetooth.]({{site.baseurl}}/images/Music-With-Audacious-Bluetooth.jpg )]({{site.baseurl}}/images/Music-With-Audacious-Bluetooth.jpg ){:target="_blank"}
 
 ## Lxpanel & Tint2 pager
 

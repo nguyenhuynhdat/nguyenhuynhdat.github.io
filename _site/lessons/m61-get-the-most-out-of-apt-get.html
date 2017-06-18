@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=b5846818cb32db352b66829f7ff1c3c28dc3453e">
+    <link rel="stylesheet" href="/assets/css/style.css?v=e72cb4526e44a2447c99653443350eb4949343c8">
     <title>Ubuntu Openbox by nguyenhuynhdat</title>
   </head>
 
@@ -25,28 +25,31 @@
       <section id="main_content">
       <h1>GET THE MOST OUT OF APT-GET</h1>
       <p> introduce some other apt-get commands. </p>
-        <p>Ubuntu/ Debian use <strong>Apt (Advanced Package Tool)</strong> as their package manager (a package manager is a tool that assist you on resolving dependencies when installing, upgrading, configuring, and removing software).</p>
+        <p>Ubuntu/ Debian use <strong>Apt (Advanced Package Tool)</strong> as their package manager (a tool that assist you on resolving dependencies when you need to install, upgrade, configure, and remove packages).</p>
 
-<p>Through out this guide, we only use <strong>apt-get install</strong> to install a package. In this part of the guide, I will show you how to get the most out of <strong>Apt</strong> package manger.</p>
+<p>Through out this guide, we only use mostly the command <strong>apt-get install</strong>. In this lesson, I will show you how to get the most out of <strong>Apt</strong> package manger.</p>
 
 <h3 id="it-all-starts-with-update-repositories-information">It all starts with update repositories information:</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-get update
 </code></pre>
 </div>
-<h3 id="to-update-entire-of-system">to update entire of system:</h3>
+<h3 id="to-update-entire-of-system">To update entire of system:</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-get upgrade
 </code></pre>
 </div>
-<p>Although name <strong>“upgrade”</strong>, the command is only for update packages that are already installed in your system.</p>
+<p><span style="color:red">Although name <strong>“upgrade”</strong>, the command is only for update packages that are already installed in your system.</span></p>
 
-<h3 id="to-install-and-update-a-package">to install and update a package</h3>
+<h3 id="to-install-and-update-a-package">To install and update a package</h3>
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-get install [package name]
 </code></pre>
 </div>
 <p>The command also update that package if it has already installed.</p>
 
 <h3 id="to-install-a-package-without-its-recommends-this-is-the-case-of-installing-a-minimal-ubuntudebian-desktop">To install a package without its recommends (this is the case of installing a minimal Ubuntu/Debian desktop)</h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install --no-install-recommends [package name]
+
+<p>To do that you need to specify this flag: <span style="color:blue">–no-install-recommends</span></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install &lt;span style="color:blue"&gt;--no-install-recommends&lt;/span&gt; [package name]
 </code></pre>
 </div>
 
@@ -54,7 +57,7 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-get remove [package name]
 </code></pre>
 </div>
-<p>To remove a package along with all of its configuration file</p>
+<p>To remove a package along with all of its configuration file:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-get --purge remove [package name]
 </code></pre>
 </div>
@@ -67,10 +70,11 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-cache search “image viewer”
 </code></pre>
 </div>
+<p>The output should be the list of packages that are related to image viewer.</p>
 
 <h3 id="to-list-dependencies-and-recommends-of-a-packages">To list dependencies and recommends of a packages</h3>
 
-<p>It’s very useful when you trying to install a minimal Ubuntu system (mostly by using the <strong>”–no-install-recommends”</strong> flag) and sometimes find that some applications are lacking features (you need to installs some more of it recommends).</p>
+<p>It’s very useful when you were trying to install a minimal Ubuntu system (mostly by using the <strong>”–no-install-recommends”</strong> flag) and sometimes found in a situation where some of your applications were lacking features (you need to installs some more of it recommends).</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>apt-cache depends [package name]
 </code></pre>
 </div>
@@ -92,6 +96,11 @@
 <p>In fact, I often use it rather than apt-cache show/policy.</p>
 
 <p>In my experience, with just all these commands, you can effectively manage your applications and your Ubuntu system.</p>
+
+<h3 id="to-find-if-a-package-is-installed-on-your-system">To find if a package is installed on your system</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>dpkg -l [package-name]
+</code></pre>
+</div>
 
           <footer role="contentinfo" class="page-footer">
 <p class="top-link"><a href="#top">return to top</a></p>
