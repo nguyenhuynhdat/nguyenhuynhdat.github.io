@@ -23,6 +23,8 @@ Although I understand the completeness and quick set-up of **lxpalnel**, **tint2
 Lxpanel is a lightweight yet fully equipped with
 all the necessary plugins (system tray, menu...)
 
+[![lxpanel]({{site.baseurl}}/images/lxpanel.png)]({{site.baseurl}}/images/lxpanel.png){:target="_blank"}
+
 ```
 sudo apt-get install lxpanel
 ```
@@ -34,7 +36,7 @@ Here is some configuration that I have done to my **lxpanel** to make it look ni
 
 ![lxpanelSystemtheme]({{site.baseurl}}/images/Panel Preferences_Systemtheme.png)
 
-* I have borrow the awesome and mature logout script from [**bunsenlabs**](https://www.bunsenlabs.org/) distro [here](https://github.com/BunsenLabs/bunsen-exit)
+* I have borrow the awesome and mature logout script from [**bunsenlabs**](https://www.bunsenlabs.org/){:target="_blank"} distro [**here**](https://github.com/BunsenLabs/bunsen-exit){:target="_blank"}
 
 (I do not know if borrowing it this way is okay or not, but I hope the developer will understand my pure purpose here and give me his/ her approval. I will ask him/ her as soon as possible)
 
@@ -47,7 +49,7 @@ Download it and then put it somewhere convenience, say: **/home/user/Custom/bl-e
 python /home/dat/Custom/bl-exit
 ```
 
-![lxpanelSystemtheme]({{site.baseurl}}/images/Panel Preferences_Logout.png)
+![lxpanellogout]({{site.baseurl}}/images/Panel Preferences_Logout.png)
 
 Now you have a very nice logout interface with various choices:
 
@@ -55,9 +57,7 @@ Now you have a very nice logout interface with various choices:
 
 **TINT2**:
 
-***Please install bl-exit from the above section because in this tint2 configuration I also use the script***
-
-To install **tint2**
+To install **tint2:**
 ```
 sudo apt-get install tint2
 ```
@@ -67,7 +67,7 @@ With its default settings, tint2 will look extremely ugly. So again we will use 
 
 ![tint2taskbar]({{site.baseurl}}/images/tint2.png)
 
-Here is configuration on pastebin, [click here!](https://pastebin.com/hxYLwYjw)
+Here is configuration on pastebin, [**click here!**](https://pastebin.com/hxYLwYjw){:target="_blank"}
 
 Copy the content to replace the current one.
 
@@ -167,7 +167,7 @@ mkdir ~/Wallpapers
 
 Now testing it by **Right-click** > **Settings** > **Choose Wallpaper** and **Apply**!
 
-![nitrogen]({{site.baseurl}}/images/nitrogen.png)
+![nitrogen]({{site.baseurl}}/images/nitrogen.jpg)
 
 ### 5. Network manager
 

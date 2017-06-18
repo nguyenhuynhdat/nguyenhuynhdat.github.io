@@ -14,9 +14,9 @@ description: install terminal emulator, text editor, GUI package manager, task m
 ### 1. Terminal emulator
 1. Terminator for Ubuntu Openbox terminal emulator
 
-Using Linux, you need a terminal emulator (of course, you can live without but much easier if you know how to use one). A terminal acts as a mediator to pass your command to your OS.
+Using Linux you will need a terminal emulator (you can live without but much easier if you know how to use one). It acts as a mediator to pass your command to the operating system.
 
-Terminator is a good terminal emulator with tabs support and it can be split in to terminal windows both horizontally and vertically.
+Terminator is a good terminal emulator with tabs support and it can be split into some terminal windows, both horizontally and vertically.
 ```
 sudo apt-get install terminator
 ```
@@ -30,14 +30,13 @@ Some useful keyboard shortcut:
 
 ### 2. Text editor
 
-You always need a text editor when using Linux as all its configuration file is in text form. If you are a developer and write code in on a daily basis, Geany is also a very good text editor with its variation of plugins.
+You will also need a text editor because all configuration files of Linux are in text form. I was familiar with Geany because it came as default with Crunchbang, my beloved distro. It is a very good text editor and very powerful with its variation of plugins.
 
-I am choosing Geany because it came as default with Crunchbang, my beloved distro. Just do not want to change to any other.
 ```
 sudo apt-get install geany
 ```
 
-We often combine **geany** with **gksudo** command to edit system files. Do not combine it with sudo (it will mess up Geany configuration file).
+We often combine **geany** with **gksudo** command to edit system files. <span style="color:red">**Do not combine it with sudo**</span> (it will mess up Geany configuration file). <span style="color:blue">**Using GUI applications with gksu instead of sudo is a rule of thumb.**</span>
 
 ```
 gksudo geany /etc/fstab
@@ -65,11 +64,14 @@ I do not use Synaptic much. **apt-get** is enough for managing package because n
 ### 4. Gdebi
 **Gdebi** to install .deb package
 
-Gdebi is also a nice program to handle .deb files, the standard package in Debian. After you have had Gdebi installed, whenever you want to install a .deb file, just double click it. Not recommend though, you should ***REALLY*** know what you are doing when dealing with packages which are outside of your official repository.
+Gdebi is also a nice program to handle .deb files, the standard package in Debian. After you have had Gdebi installed, whenever you want to install a .deb file, just double click it.
+
+Installing a .deb package from any other source rather than the official repositories is a frown upon practice. You should ***REALLY*** know what you are doing.
+
 ```
 sudo apt-get install gdebi
 ```
-Another alternative if you do not use gdebi: One simple command can do it:
+Another alternative if you do not want to use **gdebi**: One simple command can do it:
 ```
 sudo dpkg -i deb_package #(to remove: sudo dpkg -r deb_package)
 ```
@@ -83,13 +85,13 @@ Htop is a lightweight program and do the job just fine.
 ```
 sudo apt-get install htop
 ```
-In your terminal emulator, type htop, it will display all the running processes and the resources being used at that moment.
+In your terminal emulator, type **htop**, it will display all the running processes and the resources being used at that moment.
 
 ![htop]({{site.baseurl}}/images/htop.png)
 
-As you can see here, I installed an Ubuntu 64bit on my computer, and the amount of RAM it takes on startup is just 390MB. That’s actually great comparing with other desktop environment, and if I go this way with 32bit, it's easier to get to just slightly over 200MB of RAM.
+As you can see here, with an Ubuntu 64bit on my computer the amount of RAM it took on start up was just 390MB. That’s actually great comparing with other desktop environment, and if I go this way with 32bit, it's easier to get to just slightly over 200MB of RAM.
 
-Here is how to bind the old combination keys **Ctrl + Alt + Del** to **htop** in your Openbox **rc.xml** configuration file:
+Here is how to bind the "old" combination keys **Ctrl + Alt + Del** to **htop** in your Openbox **rc.xml** configuration file:
 ```
 <keybind key="C-A-Delete">
   <action name="Execute">

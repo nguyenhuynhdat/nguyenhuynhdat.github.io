@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=369c0a04289004d4c313e75cc7c55e6d06ebe574">
+    <link rel="stylesheet" href="/assets/css/style.css?v=a2a500cbabea07c89c1166b7760627ef9c5ee80d">
     <title>Ubuntu Openbox by nguyenhuynhdat</title>
   </head>
 
@@ -39,9 +39,9 @@
   <li>Terminator for Ubuntu Openbox terminal emulator</li>
 </ol>
 
-<p>Using Linux, you need a terminal emulator (of course, you can live without but much easier if you know how to use one). A terminal acts as a mediator to pass your command to your OS.</p>
+<p>Using Linux you will need a terminal emulator (you can live without but much easier if you know how to use one). It acts as a mediator to pass your command to the operating system.</p>
 
-<p>Terminator is a good terminal emulator with tabs support and it can be split in to terminal windows both horizontally and vertically.</p>
+<p>Terminator is a good terminal emulator with tabs support and it can be split into some terminal windows, both horizontally and vertically.</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install terminator
 </code></pre>
 </div>
@@ -57,14 +57,13 @@
 
 <h3 id="2-text-editor">2. Text editor</h3>
 
-<p>You always need a text editor when using Linux as all its configuration file is in text form. If you are a developer and write code in on a daily basis, Geany is also a very good text editor with its variation of plugins.</p>
+<p>You will also need a text editor because all configuration files of Linux are in text form. I was familiar with Geany because it came as default with Crunchbang, my beloved distro. It is a very good text editor and very powerful with its variation of plugins.</p>
 
-<p>I am choosing Geany because it came as default with Crunchbang, my beloved distro. Just do not want to change to any other.</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install geany
 </code></pre>
 </div>
 
-<p>We often combine <strong>geany</strong> with <strong>gksudo</strong> command to edit system files. Do not combine it with sudo (it will mess up Geany configuration file).</p>
+<p>We often combine <strong>geany</strong> with <strong>gksudo</strong> command to edit system files. <span style="color:red"><strong>Do not combine it with sudo</strong></span> (it will mess up Geany configuration file). <span style="color:blue"><strong>Using GUI applications with gksu instead of sudo is a rule of thumb.</strong></span></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>gksudo geany /etc/fstab
 </code></pre>
@@ -92,11 +91,14 @@
 <h3 id="4-gdebi">4. Gdebi</h3>
 <p><strong>Gdebi</strong> to install .deb package</p>
 
-<p>Gdebi is also a nice program to handle .deb files, the standard package in Debian. After you have had Gdebi installed, whenever you want to install a .deb file, just double click it. Not recommend though, you should <strong><em>REALLY</em></strong> know what you are doing when dealing with packages which are outside of your official repository.</p>
+<p>Gdebi is also a nice program to handle .deb files, the standard package in Debian. After you have had Gdebi installed, whenever you want to install a .deb file, just double click it.</p>
+
+<p>Installing a .deb package from any other source rather than the official repositories is a frown upon practice. You should <strong><em>REALLY</em></strong> know what you are doing.</p>
+
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gdebi
 </code></pre>
 </div>
-<p>Another alternative if you do not use gdebi: One simple command can do it:</p>
+<p>Another alternative if you do not want to use <strong>gdebi</strong>: One simple command can do it:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo dpkg -i deb_package #(to remove: sudo dpkg -r deb_package)
 </code></pre>
 </div>
@@ -110,13 +112,13 @@
 <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install htop
 </code></pre>
 </div>
-<p>In your terminal emulator, type htop, it will display all the running processes and the resources being used at that moment.</p>
+<p>In your terminal emulator, type <strong>htop</strong>, it will display all the running processes and the resources being used at that moment.</p>
 
 <p><img src="/images/htop.png" alt="htop" /></p>
 
-<p>As you can see here, I installed an Ubuntu 64bit on my computer, and the amount of RAM it takes on startup is just 390MB. That’s actually great comparing with other desktop environment, and if I go this way with 32bit, it’s easier to get to just slightly over 200MB of RAM.</p>
+<p>As you can see here, with an Ubuntu 64bit on my computer the amount of RAM it took on start up was just 390MB. That’s actually great comparing with other desktop environment, and if I go this way with 32bit, it’s easier to get to just slightly over 200MB of RAM.</p>
 
-<p>Here is how to bind the old combination keys <strong>Ctrl + Alt + Del</strong> to <strong>htop</strong> in your Openbox <strong>rc.xml</strong> configuration file:</p>
+<p>Here is how to bind the “old” combination keys <strong>Ctrl + Alt + Del</strong> to <strong>htop</strong> in your Openbox <strong>rc.xml</strong> configuration file:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>&lt;keybind key="C-A-Delete"&gt;
   &lt;action name="Execute"&gt;
     &lt;startupnotify&gt;
