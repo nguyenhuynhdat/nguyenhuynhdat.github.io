@@ -11,7 +11,7 @@ description: Common features of an Operating System
   + Windows fonts
   + App got taking screenshot
   + App for locking screen
-  + [App launcher](http://localhost:4000/lessons/m35-essential-operating-system-features.html#applauncher)
+  + [App launcher]({{site.baseurl}}/lessons/m35-essential-operating-system-features.html#applauncher)
 
 ### 1. Login manager
 

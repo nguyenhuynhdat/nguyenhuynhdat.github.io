@@ -14,10 +14,10 @@ A lot of people use Linux because it is free of charge, but [for me] its true fr
 
 Please keep in mind that this website is showing you only one way choosing packages according to my own preference. The ultimate purpose is to give you a first glimpse of the aforementioned "freedom", to tempt you to explore more the awesome world of Linux.
 
-[**Here are the link to all the lessons.**]({{site.baseurl}}/lessons/lessons.html){:target="_blank"}
+[**Here are the link to all the lessons.**]({{site.baseurl}}/lessons.html){:target="_blank"}
 
 You can also click to the "All The Lessons" button in the header of the website to go to the **lessons** page:
 
-[![lessonsButton]({{site.baseurl}}/images/lessonsButton.png)]({{site.baseurl}}/lessons/lessons.html){:target="_blank"}
+[![lessonsButton]({{site.baseurl}}/images/lessonsButton.png)]({{site.baseurl}}/lessons.html){:target="_blank"}
 
 Hope you enjoy all the information!
