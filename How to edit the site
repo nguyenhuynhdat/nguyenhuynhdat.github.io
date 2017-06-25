@@ -1,0 +1,7 @@
+To edit header button:
+
+/_layout/default.html
+
+change button
+
+/_sass/jekyll-theme-hacker.scss
