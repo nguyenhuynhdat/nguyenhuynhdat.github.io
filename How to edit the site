@@ -5,3 +5,24 @@ To edit header button:
 change button
 
 /_sass/jekyll-theme-hacker.scss
+
+
+Jekyll command:
+
+source /home/dat/.rvm/scripts/rvm
+
+jekyll serve
+
+localhost:4000
+
+Update website:
+
+git status
+
+git add .
+
+git commit -m 'message'
+
+git push
+
+
