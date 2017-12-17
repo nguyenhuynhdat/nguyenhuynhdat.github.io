@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=dbe1c78a5852ac8615aaa8e2e5731cadce06768f">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/Original%20of%20README.html">
+        <section id="downloads">
+          
+            <a href="/lessons.html" class="btn btn-github"><span class="icon"></span>LESSONS</a>
+            <a href="/screenshots.html" class="btn btn-camera"><span class="icon"></span>SCREENSHOTS</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTRMJ2f0IHmRTdNzXZkz0bg8G-nF0XP0zJllWn_oHl48O5bQ/viewform?usp=sf_link#start=invite" class="btn btn-contact"><span class="icon"></span>Contact Me</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>The Hacker theme</h1>
+      <p>Show you how to use Ubuntu with Openbox as a Window Manager. 
+</p>
+        <main role="main" class="cf">
+<article class="posts">
+ <article role="article">
+        <header>
+            <h2>The Hacker theme</h2>
+        </header>
+        <h1 id="the-hacker-theme">The Hacker theme</h1>
+
+<p><a href="https://travis-ci.org/pages-themes/hacker"><img src="https://travis-ci.org/pages-themes/hacker.svg?branch=master" alt="Build Status" /></a> <a href="https://badge.fury.io/rb/jekyll-theme-hacker"><img src="https://badge.fury.io/rb/jekyll-theme-hacker.svg" alt="Gem Version" /></a></p>
+
+<p><em>Hacker is a Jekyll theme for GitHub Pages. You can <a href="http://pages-themes.github.io/hacker">preview the theme to see what it looks like</a>, or even <a href="#usage">use it today</a>.</em></p>
+
+<p><img src="/thumbnail.png" alt="Thumbnail of hacker" /></p>
+
+<h2 id="usage">Usage</h2>
+
+<p>To use the Hacker theme:</p>
+
+<ol>
+  <li>
+    <p>Add the following to your site’s <code class="highlighter-rouge">_config.yml</code>:</p>
+
+    <div class="language-yml highlighter-rouge"><pre class="highlight"><code> <span class="s">theme</span><span class="pi">:</span> <span class="s">jekyll-theme-hacker</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Optionally, if you’d like to preview your site on your computer, add the following to your site’s <code class="highlighter-rouge">Gemfile</code>:</p>
+
+    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="n">gem</span> <span class="s2">"github-pages"</span><span class="p">,</span> <span class="ss">group: :jekyll_plugins</span>
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="customizing">Customizing</h2>
+
+<h3 id="configuration-variables">Configuration variables</h3>
+
+<p>Hacker will respect the following variables, if set in your site’s <code class="highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">title</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">The title of your site</span><span class="pi">]</span>
+<span class="s">description</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">A short description of your site's purpose</span><span class="pi">]</span>
+</code></pre>
+</div>
+
+<p>Additionally, you may choose to set the following optional variables:</p>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">show_downloads</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">true"</span> <span class="nv">or "false" to indicate whether to provide a download URL</span><span class="pi">]</span>
+<span class="s">google_analytics</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Your Google Analytics tracking ID</span><span class="pi">]</span>
+</code></pre>
+</div>
+
+<h3 id="stylesheet">Stylesheet</h3>
+
+<p>If you’d like to add your own custom styles:</p>
+
+<ol>
+  <li>Create a file called <code class="highlighter-rouge">/assets/css/style.scss</code> in your site</li>
+  <li>Add the following content to the top of the file, exactly as shown:
+    <div class="language-scss highlighter-rouge"><pre class="highlight"><code> <span class="nt">---</span>
+ <span class="nt">---</span>
+
+ <span class="o">@</span><span class="nt">import</span> <span class="s2">"jekyll-theme-hacker"</span><span class="p">;</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Add any custom CSS (or Sass, including imports) you’d like immediately after the <code class="highlighter-rouge">@import</code> line</li>
+</ol>
+
+<h3 id="layouts">Layouts</h3>
+
+<p>If you’d like to change the theme’s HTML layout:</p>
+
+<ol>
+  <li><a href="https://github.com/pages-themes/hacker/blob/master/_layouts/default.html">Copy the original template</a> from the theme’s repository<br />(<em>Pro-tip: click “raw” to make copying easier</em>)</li>
+  <li>Create a file called <code class="highlighter-rouge">/_layouts/default.html</code> in your site</li>
+  <li>Paste the default layout content copied in the first step</li>
+  <li>Customize the layout as you’d like</li>
+</ol>
+
+<h2 id="roadmap">Roadmap</h2>
+
+<p>See the <a href="https://github.com/pages-themes/hacker/issues">open issues</a> for a list of proposed features (and known issues).</p>
+
+<h2 id="project-philosophy">Project philosophy</h2>
+
+<p>The Hacker theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users’ needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Interested in contributing to Hacker? We’d love your help. Hacker is an open source project, built one contribution at a time by users like you. See <a href="/CONTRIBUTING.md">the CONTRIBUTING file</a> for instructions on how to contribute.</p>
+
+<h3 id="previewing-the-theme-locally">Previewing the theme locally</h3>
+
+<p>If you’d like to preview the theme locally (for example, in the process of proposing a change):</p>
+
+<ol>
+  <li>Clone down the theme’s repository (<code class="highlighter-rouge">git clone https://github.com/pages-themes/hacker</code>)</li>
+  <li><code class="highlighter-rouge">cd</code> into the theme’s directory</li>
+  <li>Run <code class="highlighter-rouge">script/bootstrap</code> to install the necessary dependencies</li>
+  <li>Run <code class="highlighter-rouge">bundle exec jekyll serve</code> to start the preview server</li>
+  <li>Visit <a href="http://localhost:4000"><code class="highlighter-rouge">localhost:4000</code></a> in your browser to preview the theme</li>
+</ol>
+
+<h3 id="running-tests">Running tests</h3>
+
+<p>The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run <code class="highlighter-rouge">script/cibuild</code>. You’ll need to run <code class="highlighter-rouge">script/bootstrap</code> one before the test script will work.</p>
+
+    </article>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/tags/">All posts</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox.com/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a> | facebook <a href="https://facebook.com/ubuntuopenbox" title="facebook">facebook.com/ubuntuopenbox</a>.</p>
+</footer>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
