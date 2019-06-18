@@ -1,8 +1,14 @@
-COURSE MATERIAL
-COMPLETE GUIDE TO INSTALL
-UBUNTU LINUX WITH OPENBOX
+---
+layout: default
+title: QUICK UBUNTU OPENBOX INSTALLION GUIDE
+description: learn about APT and apt-get.
+---
 
-http://UbuntuOpenbox.com/course/
+#COURSE MATERIAL
+#COMPLETE GUIDE TO INSTALL UBUNTU LINUX WITH OPENBOX
+
+Here is configuration on pastebin, [**http://UbuntuOpenbox.com/lessons/course/**](UbuntuOpenbox.com/lessons/course){:target="_blank"}
+
 
 Click pdf-icon for the PDF version of this page.
 

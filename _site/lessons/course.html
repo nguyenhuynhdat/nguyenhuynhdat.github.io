@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f06a43a04d3f5868948ed533f17d3978d5330a9a">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/lessons/course.html">
+        <section id="downloads">
+          
+            <a href="/lessons.html" class="btn btn-github"><span class="icon"></span>LESSONS</a>
+            <a href="/screenshots.html" class="btn btn-camera"><span class="icon"></span>SCREENSHOTS</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTRMJ2f0IHmRTdNzXZkz0bg8G-nF0XP0zJllWn_oHl48O5bQ/viewform?usp=sf_link#start=invite" class="btn btn-contact"><span class="icon"></span>Contact Me</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>QUICK UBUNTU OPENBOX INSTALLION GUIDE</h1>
+      <p> learn about APT and apt-get. </p>
+        <p>#COURSE MATERIAL
+#COMPLETE GUIDE TO INSTALL UBUNTU LINUX WITH OPENBOX</p>
+
+<p>Here is configuration on pastebin, <a href="UbuntuOpenbox.com/lessons/course" target="_blank"><strong>http://UbuntuOpenbox.com/lessons/course/</strong></a></p>
+
+<p>Click pdf-icon for the PDF version of this page.</p>
+
+<p>[spacer height=”20px”]</p>
+
+<p>[spacer height=”20px”]
+Section 3 – Install Ubuntu Operating System</p>
+
+<p>[spacer height=”20px”]</p>
+
+<ol>
+  <li>Repositories:</li>
+</ol>
+
+<p>A repository is a server storing packages that are suitable to be installed right away (packages as well as all of their dependencies)</p>
+
+<p>/etc/apt/source.list file will have a list of repository addresses.</p>
+
+<p>PPA: A Personal Package Archives (PPA) is a repository maintained by an individual or an independent group; as oppose to the official repository maintained by Ubuntu.</p>
+
+<ol>
+  <li>Update apt information (from source.list file)</li>
+</ol>
+
+<p>sudo apt-get update</p>
+
+<p>It will go to the addresses listed in the /apt/etc/source.list file and update the information about what are on there (which packages are on there) and what have been changed (what the current packages’ versions are).</p>
+
+<p>You need to execute this command whenever you want to install any package.</p>
+
+<ol>
+  <li>Install packages</li>
+</ol>
+
+<p>sudo apt-get install [packages’ name]</p>
+
+<p>For example:</p>
+
+<p>sudo apt-get install firefox openbox</p>
+
+<p>will install both firefox and openbox at the same time.</p>
+
+<ol>
+  <li>Remove packages</li>
+</ol>
+
+<p>sudo apt-get remove firefox</p>
+
+<ul>
+  <li>remove packages and all their configuration file.</li>
+</ul>
+
+<p>sudo apt-get remove –purge firefox</p>
+
+<ol>
+  <li>nano to edit text file</li>
+</ol>
+
+<p>sudo nano /directory/to/text/file</p>
+
+<p>Navigate through the text file using up/down/left/right keys.</p>
+
+<ul>
+  <li>shortcut keys:</li>
+</ul>
+
+<p>“Ctrl + X” to exit nano, “Y” to save and “N” to abort the saving.</p>
+
+<p>[spacer height=”20px”]
+Section 4 – Install Openbox And Configure It</p>
+
+<p>[spacer height=”20px”]
+A. Install packages</p>
+
+<p>Copy paste: The commands to install all of the packages for this section.</p>
+
+<p>sudo apt-get install xorg openbox firefox tint2 terminator geany gksu</p>
+
+<p>Detail:</p>
+
+<p>Xorg, the foundation of GUI: xorg</p>
+
+<p>If for any reason that “the startx command are not found”. Please install xinit package:</p>
+
+<p>sudo apt-get install xinit</p>
+
+<p>Firefox browser: firefox</p>
+
+<p>Tint2 taskbar: tint2</p>
+
+<p>Geany text editor: geany</p>
+
+<p>Terminator terminal: terminator</p>
+
+<p>For using GUI application with root privilege: gksu</p>
+
+<p>For example: gksu geany /directory/to/text/file or gksu thunar</p>
+
+<p>*Install VboxGuestAdditions (For testing only. If you are installing on a real machine, this virtualbox guest additions package is not needed)</p>
+
+<p>Mount VboxGuestAdditions.iso file in to virtual machine.</p>
+
+<p>sudo apt-get install build-essential module-assistant</p>
+
+<p>sudo m-a prepare</p>
+
+<p>sudo blkid #To find where the iso file is in your system (often at /dev/sr0)</p>
+
+<p>mkdir cdrom</p>
+
+<p>sudo mount /dev/sr0 cdrom</p>
+
+<p>cd cdrom</p>
+
+<p>sudo ./VBoxLinuxAdditions.run
+B. Configure Openbox</p>
+
+<p>Copy configuration files to user’s home folder:</p>
+
+<p>cp -R /etc/xdg/openbox ~/.config/</p>
+
+<p>*Notice that because you are working on your home folder. You do not need to use sudo.</p>
+
+<p>Edit configureation files:</p>
+
+<p>geany ~/.config/openbox/rc.xml</p>
+
+<p>geany ~/.config/openbox/autostart</p>
+
+<p>geany ~/.config/openbox/menu.xml</p>
+
+<p>Replace the content of these file with ones below:</p>
+
+<p>My recommended Openbox configuration files:</p>
+
+<p>rc.xml file: http://pastebin.com/ajfTFaay</p>
+
+<p>autostart file: http://pastebin.com/EmY8gx9c</p>
+
+<p>menu.xml file: http://pastebin.com/5Cixsqpa</p>
+
+<ul>
+  <li>We have to edit the /etc/sudoer file for the two last entry (for shutdown and restart) of right click menu could work:</li>
+</ul>
+
+<p>Open sudo configuration file (sudoer) in nano text editor by this command:
+sudo visudo
+Add this line to the end of sudoer file:
+user_name ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot</p>
+
+<p>Ctrl + X and “Y” to confirm.</p>
+
+<p>[spacer height=”20px”]
+Section 5 – Essential Features Of A Operating System</p>
+
+<p>[spacer height=”20px”]</p>
+
+<p>Copy paste: The commands to install all of the packages for this section.</p>
+
+<p>sudo apt-get install thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin humanity-icon-theme gnome-icon-theme-full gvfs gvfs-backends file-roller rar unrar p7zip zip unzip p7zip-full p7zip-rar wicd htop scrot i3lock libnotify-bin xfce4-notifyd software-properties-common</p>
+
+<p>Detail:</p>
+
+<p>File manager: thunar thunar-volman thunar-archive-plugin thunar-media-tags-plugin humanity-icon-theme gnome-icon-theme-full gvfs gvfs-backends</p>
+
+<p>Archieve manager: file-roller rar unrar p7zip zip unzip p7zip-full p7zip-rar</p>
+
+<p>The network manager: wicd</p>
+
+<p>The system mornitor: htop</p>
+
+<p>The screen capture (Print Scrn): scrot</p>
+
+<p>The screen locker (Supper + L): i3lock</p>
+
+<p>The notification: libnotify-bin &amp; xfce4-notifyd</p>
+
+<p>For adding PPA: software-properties-common</p>
+
+<p>The login manager:</p>
+
+<p>I have not used login manager anymore. Just plainly entering my username and password.
+We will add some lines into ~/.profile file in your home folder:</p>
+
+<p>geany ~/.profile</p>
+
+<p>add these line to the end of that file:</p>
+<h1 id="startx-after-login">startx after login</h1>
+<p>if [[ -z $DISPLAY ]] &amp;&amp; [[ $(tty) = /dev/tty1 ]]; then
+exec startx
+fi</p>
+
+<p>From now on, the GUI will autostart (without the need of startx command) as soon as you enter your username and password.</p>
+
+<p>(Optional – if you want to use Openbox with other Desktop Environments or Window Managers. You will need a good login manager)</p>
+
+<p>Use –no-install-recommends flag to prevent unnecessary package to be installed.</p>
+
+<p>*lxdm</p>
+
+<p>sudo apt-get install lxdm –no-install-recommends</p>
+
+<p>Please go here for more information and instruction:</p>
+
+<p>https://wiki.archlinux.org/index.php/LXDM</p>
+
+<p>OR</p>
+
+<p>*lightdm</p>
+
+<p>sudo apt-get install lightdm lightdm-gtk-greeter –no-install-recommends</p>
+
+<p>For more information and instruction</p>
+
+<p>https://wiki.archlinux.org/index.php/LightDM</p>
+
+<p>[spacer height=”20px”]
+Section 6 – Install Internet Applications</p>
+
+<p>[spacer height=”20px”]</p>
+
+<p>Add PPA for Uget (this is the official PPA from the developer of Uget)</p>
+
+<p>sudo add-apt-repository ppa:plushuang-tw/uget-stable</p>
+
+<p>sudo apt-get update</p>
+
+<p>Copy paste: The commands to install all of the packages for this section.</p>
+
+<p>sudo apt-get install thunderbird pidgin uget</p>
+
+<p>Detail:</p>
+
+<p>Firefox for internet browser: firefox (already installed)</p>
+
+<p>Thunderbird for email client: thunderbird</p>
+
+<p>Pidgin for multi-platform chat client: pidgin</p>
+
+<p>Uget for download manager (Official PPA from developer): uget</p>
+
+<p>*Dropbox for cloud storage (proprietary software)</p>
+
+<p>Go to: https://www.dropbox.com/install?os=lnx</p>
+
+<p>to download the .deb package and install it with this command:</p>
+
+<p>sudo dpkg -i [.deb package]</p>
+
+<p>[spacer height=”20px”]
+Section 7 – Install Multimedia Applications</p>
+
+<p>[spacer height=”20px”]</p>
+
+<p>Add PPA for Viewnior (for Ubuntu 14.04 only. If you are using newer version of Ubuntu, it has already been in repository)</p>
+
+<p>sudo add-apt-repository ppa:skellat/flow1</p>
+
+<p>Add PPA for Caffeine (for Ubuntu 15.04 and earlier. It has already been in the repository for Ubuntu 15.10)</p>
+
+<p>sudo add-apt-repository ppa:caffeine-developers/ppa</p>
+
+<p>sudo apt-get update</p>
+
+<p>Copy paste: The commands to install all of the packages for this section.</p>
+
+<p>sudo apt-get install alsa-base alsa-utils volti vlc audacious gimp shutter viewnior</p>
+
+<p>Detail:</p>
+
+<p>Alsa sound cards driver: alsa-base alsa-utils</p>
+
+<p>*If your sound card does not work right after installing the above packages, please do as following:</p>
+
+<p>sudo alsactl init</p>
+
+<p>and one more step to make alsa guess the audio card(s) on your system</p>
+
+<p>sudo adduser [username] audio</p>
+
+<p>to add your username to autio group</p>
+
+<p>Then, reboot your computer for the change to take effect.</p>
+
+<p>Volti for sound applet: volti</p>
+
+<p>VLC for playing videos: vlc</p>
+
+<p>Audacious for playing music: audacious</p>
+
+<p>Gimp as image suite (like Photoshop): gimp</p>
+
+<p>Shutter for screen capture: shutter</p>
+
+<p>Viewnior as image viewer: viewnior</p>
+
+<p>[spacer height=”20px”]
+Section 8 – Install Office Applications</p>
+
+<p>[spacer height=”20px”]</p>
+
+<p>Add PPA for LibreOffice (from the developer of LibreOffice)</p>
+
+<p>sudo add-apt-repository ppa:libreoffice/ppa</p>
+
+<p>sudo apt-get update</p>
+
+<p>Copy paste: The commands to install all of the packages for this section.</p>
+
+<p>sudo apt-get install fbreader libreoffice-calc libreoffice-writer libreoffice-gtk</p>
+
+<p>Detail:</p>
+
+<p>LibreOffice Writer (word processor): libreoffice-writer</p>
+
+<p>LibreOffice Calc (spreadsheet): libreoffice-calc</p>
+
+<ul>
+  <li>OPTIONAL: for other applications of LibreOffice Suite:</li>
+</ul>
+
+<p>LibreOffice Base (database): libreoffice-base</p>
+
+<p>LibreOffice Draw (drawing): libreoffice-draw</p>
+
+<p>LibreOffice Impress (presentation): libreoffice-impress</p>
+
+<p>LibreOffice Math (equation editor): libreoffice-math</p>
+
+<p>Theme for LibreOffice: libreoffice-gtk libreoffice-style-sifr</p>
+
+<p>FB Reader for reading ebook: fbreader</p>
+
+<p>*Foxit as Pdf reader (proprietary software)</p>
+
+<p>https://www.foxitsoftware.com/downloads/</p>
+
+<p>go to the link to download the .run package for Linux 64 bit platform. Open it and follow the instruction.</p>
+
+<p>[spacer height=”20px”]
+Section 9 – Customize The Look</p>
+
+<p>[spacer height=”20px”]</p>
+
+<p>Copy paste: The commands to install all of the packages for this section.</p>
+
+<p>sudo apt-get install nitrogen conky obconf lxappearance obconf</p>
+
+<p>Detail:</p>
+
+<p>Tint2 theme:</p>
+
+<p>geany ./.config/tint2/tint2rc</p>
+
+<p>My tint2 theme: http://pastebin.com/hxYLwYjw</p>
+
+<p>Set wallpaper: nitrogen</p>
+
+<p>Change Openbox theme and more: using obconf</p>
+
+<p>User-specific themes can be installed in ~/.local/share/themes or in ~/.themes.</p>
+
+<p>Theme: Mistral</p>
+
+<p>Download at: http://phobi4n.deviantart.com/art/Mistral-Openbox-543910044</p>
+
+<p>Change GTK theme: using lxappearance</p>
+
+<p>User-specific themes can be installed in ~/.local/share/themes or in ~/.themes.</p>
+
+<p>Theme: Breeze-gtk</p>
+
+<p>Download at: https://github.com/dirruk1/gnome-breeze</p>
+
+<p>Change Icon theme: using lxappearance</p>
+
+<p>Either install via PPAs or copy (the extracted) icon folder directly to /usr/share/icons or ~/.icons</p>
+
+<p>Theme: Vivacious-colors</p>
+
+<p>Information at: http://www.ravefinity.com/p/vivacious-colors-gtk-icon-theme.html</p>
+
+<p>By PPA:</p>
+
+<p>sudo add-apt-repository ppa:ravefinity-project/ppa
+sudo apt-get update
+sudo apt-get install vivacious-colors</p>
+
+<p>Change Cursor theme: using lxappearance</p>
+
+<p>Copy the cursor theme folder directly to /usr/share/icons or ~/.icons</p>
+
+<p>Theme: Breeze</p>
+
+<p>Download at: http://gnome-look.org/content/show.php/Breeze+Serie?content=169316</p>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox.com/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a> | facebook <a href="https://facebook.com/ubuntuopenbox" title="facebook">facebook.com/ubuntuopenbox</a>.</p>
+</footer>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f06a43a04d3f5868948ed533f17d3978d5330a9a">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/blog/headless-rpi-mpd-transmission.html">
+        <section id="downloads">
+          
+            <a href="/lessons.html" class="btn btn-github"><span class="icon"></span>LESSONS</a>
+            <a href="/screenshots.html" class="btn btn-camera"><span class="icon"></span>SCREENSHOTS</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTRMJ2f0IHmRTdNzXZkz0bg8G-nF0XP0zJllWn_oHl48O5bQ/viewform?usp=sf_link#start=invite" class="btn btn-contact"><span class="icon"></span>Contact Me</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>Goals:</h1>
+      <p>Show you how to use Ubuntu with Openbox as a Window Manager. 
+</p>
+        <main role="main" class="cf">
+<article class="posts">
+ <article role="article">
+        <header>
+            <h2>Goals:</h2>
+        </header>
+        
+<h1 id="goals">Goals:</h1>
+
+<p>It should be nice to have:</p>
+
+<ol>
+  <li>A mpd server can stream BBC 4 internet radio, can play its local store music and stream music over wifi via updn.</li>
+  <li>A transmission-daemon server that can download some torrent while the music server not in use.</li>
+</ol>
+
+<h1 id="prerequisites">Prerequisites:</h1>
+
+<ol>
+  <li>I had a raspberry Pi model B lying around with a spare 1Gb sd card.</li>
+  <li>A Creative Go pro USB audio card</li>
+  <li>Old laptop HDD from my previous SSD replacement</li>
+  <li>A wireless USB adapter. I couldnot remember the brand, but with in my experience with Linux so far, any brand should work.</li>
+  <li>A Belkin 4 port mini hub - http://www.belkin.com/in/p/P-F5U407/</li>
+</ol>
+
+<h1 id="my-google-around-research">My Google-around research:</h1>
+<p>I found the USB wireless adapter name: https://www.amazon.com/TP-Link-N150-Wireless-Adapter-TL-WN725N/dp/B008IFXQFU/ref=sr_1_4?ie=UTF8&amp;qid=1499571218&amp;sr=8-4&amp;keywords=tp+link+wifi</p>
+
+<p>I needed a cable to convert Sata to USB for my old HDD: https://www.amazon.com/StarTech-SATA-Drive-Adapter-Cable/dp/B00HJZJI84</p>
+
+<p>I found that 1GB SD card is pretty primitive for a official Raspbian image. I then found this image: Minibian https://minibianpi.wordpress.com/features/</p>
+
+<p>It had SSH enable by default, fit to my small size card and compatible with the my old version Raspberry Pi model B. Perfect!</p>
+
+<p>I needed some tool to flash the image to the card but did not want to read the manual of the dd command. I then found Etcher https://etcher.io/. It was a portable tool and run well on my Debian Jessie.</p>
+
+<p>Found this well written guide for mdp: https://www.lesbonscomptes.com/pages/raspmpd.html.
+and this for transmission-daemon:
+http://www.techjawab.com/2014/08/how-to-install-transmission-on.html</p>
+
+<p>After reading itThe packages I should use were: mpd for music server, upmpdcli for an UPnP interface; transmission-daemon for torrent downloader.</p>
+
+<p>The upmpdcli package was not in the official repositories, so it had to be installed from
+a PPA.</p>
+
+<h1 id="the-installation">The installation:</h1>
+
+<p>First, flash the image into the card.
+Second, plug USB hub, HDD, wifi adapter in the Raspberry then plud  to a power source.
+Third:
+Install sudo, add pi user and give it the sudo power</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>adduser pi
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>adduser &lt;username&gt; sudo
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ssh root@yourRPiIP
+</code></pre>
+</div>
+<p>the default password is <strong>raspberry</strong>. You should change it immediately. Next:</p>
+
+<p>Add upmpdcli PPA: <strong>/etc/apt/sources.list.d/upmpdcli.list</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>touch /etc/apt/sources.list.d/upmpdcli.list
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>nano /etc/apt/sources.list.d/upmpdcli.list
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "deb http://www.lesbonscomptes.com/upmpdcli/downloads/raspbian-jessie/ unstable main" &gt;&gt; /etc/apt/sources.list.d/upmpdcli.list
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get update
+apt-get upgrade
+</code></pre>
+</div>
+<p>Then:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install mdp transmission-daemon --no-install-recommends
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install alsa-utils
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install upmpdcli
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install nano --no-install-recommends
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install ntfs-3g
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>UUID=ACEC6EA8EC6E6D10   /media/course  ntfs    defaults    0   0
+</code></pre>
+</div>
+<p>These took quite a long time to complete.
+After these upgrade and installations, my Raspberry only had 175MB remaining. It was fine, as nothing more would be added. Please noted that it was the space remaining after a:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>apt-get clean
+</code></pre>
+</div>
+
+<h1 id="configuration">Configuration:</h1>
+
+<h2 id="1-mdp">1. MDP:</h2>
+<p>Essential things that I should know:</p>
+<ol>
+  <li>the configuration file of the mdp located here:
+``
+sudo cp /etc/mpd.conf /home/pi/mpd/mpd.conf
+    <div class="highlighter-rouge"><pre class="highlight"><code>change the owner of the config file, otherwise the user pi cannot initiate the server.
+</code></pre>
+    </div>
+    <p>chown pi:audio /home/pi/mpd/mpd.conf
+```</p>
+  </li>
+  <li>how to restart the service:
+    <div class="highlighter-rouge"><pre class="highlight"><code>systemctl restart mpd
+</code></pre>
+    </div>
+  </li>
+  <li>need to create a user for security reason:
+```</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>4. only root user has audio card
+</code></pre>
+</div>
+<p>sudo usermod -a -G groupname username</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>replace the groupname with **audio**.
+Initilizing if there is no sound cards found"
+</code></pre>
+</div>
+<p>alsactl init</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>add user to audio group
+</code></pre>
+</div>
+<p>usermod -a -G audio pi</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+# Further feature:
+
+1. mdp client on my Blackbery Passport phone and laptop:
+
+2. transmission client on on my Blackbery Passport phone and laptop:
+
+3. stream music from my Debian laptop:
+I have been strem via UPnP to my Kodi server
+using pulseaudio-dlna package:
+It was not in the official repositories of Debian Jessie, so I had to install it from source:
+
+First, instal its dependencies:
+
+</code></pre>
+</div>
+<p>sudo apt-get install libxml2-dev
+sudo apt-get install libxslt1-dev
+sudo apt-get install python-lxml</p>
+<div class="highlighter-rouge"><pre class="highlight"><code></code></pre>
+</div>
+<p>git clone https://github.com/masmu/pulseaudio-dlna.git</p>
+<div class="highlighter-rouge"><pre class="highlight"><code></code></pre>
+</div>
+<p>sudo python setup.py install</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>To be able to stream via UPnP, you have to start it first in terminal or you can at it to your autostart file for the availability.
+
+</code></pre>
+</div>
+<p>pulseaudio-dlna
+```</p>
+
+    </article>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/tags/">All posts</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox.com/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a> | facebook <a href="https://facebook.com/ubuntuopenbox" title="facebook">facebook.com/ubuntuopenbox</a>.</p>
+</footer>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>

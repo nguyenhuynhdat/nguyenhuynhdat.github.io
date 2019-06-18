@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f06a43a04d3f5868948ed533f17d3978d5330a9a">
+    <title>Ubuntu Openbox by nguyenhuynhdat</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Ubuntu Openbox</h1>
+        <h2>A basic guide to install Ubuntu with Openbox</h2>
+        <link rel="canonical" href="/blog/ebook-convert-server.html">
+        <section id="downloads">
+          
+            <a href="/lessons.html" class="btn btn-github"><span class="icon"></span>LESSONS</a>
+            <a href="/screenshots.html" class="btn btn-camera"><span class="icon"></span>SCREENSHOTS</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTRMJ2f0IHmRTdNzXZkz0bg8G-nF0XP0zJllWn_oHl48O5bQ/viewform?usp=sf_link#start=invite" class="btn btn-contact"><span class="icon"></span>Contact Me</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+      <h1>Ubuntu Openbox</h1>
+      <p>Show you how to use Ubuntu with Openbox as a Window Manager. 
+</p>
+        <main role="main" class="cf">
+<article class="posts">
+ <article role="article">
+        <header>
+            <h2></h2>
+        </header>
+        
+<p>To fetch .epub files attached and put it to a proper folder
+fetchmail
+procmail
+uudeview</p>
+
+<p>To convert .epub files to .mobi files
+calibre</p>
+
+<p>To email the converted file to your kindle
+mutt</p>
+
+<p>To install all of them:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install fetchmail procmail uudeview calibre mutt
+</code></pre>
+</div>
+<p>Configure mutt to manage your Gmail:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># $HOME/.muttrc
+set realname = "Last_name First_name"
+set from = "your_gmail_account@gmail.com"
+set use_from = yes
+set envelope_from = yes
+
+set smtp_url = "smtps://your_gmail_account@gmail.com@smtp.gmail.com:465/"
+set smtp_pass = "your_gmail_password"
+set imap_user = "your_gmail_account@gmail.com"
+set imap_pass = "your_gmail_password"
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set ssl_force_tls = yes
+# G to get mail
+bind index G imap-fetch-mail
+set editor = "nano"
+set charset = "utf-8"
+set record = ''
+</code></pre>
+</div>
+<p>To test your new setting:
+mutt -s “Test from mutt” dat.startup@gmail.com &lt; ~/text
+Configure fetchmail</p>
+<div class="highlighter-rouge"><pre class="highlight"><code># $HOME/.fetchmailrc
+# chmod 700 /home/username/.fetchmailrc
+# fetchmail -d0 -vk pop.gmail.com
+# set username to use fetch mail on your Linux (pi)
+set postmaster "username"
+# set polling time (6 minutes)
+set daemon 660
+
+poll pop.gmail.com with proto POP3
+   user 'email_to_fetch@gmail.com' there with password 'password_of_the_email' is pi here options ssl
+mda '/usr/bin/procmail -d %T'
+</code></pre>
+</div>
+<p>To test fetchmail:
+fetchmail -d0 -vk pop.gmail.com</p>
+
+<p>Configure procmail to forward to uudeview and unpack attachments to $HOME/epub_attachments</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>:0
+*^content-Type:
+{
+  $HOME/.procmailrc
+   # backup the complete mail first..
+   # you can leave out this part if you don't want a backup of the complete mail
+  # :0c:
+  # $HOME/mail_backup
+
+   # Now the actual unpacking part
+   # forward to uudeview and unpack attachments to $HOME/epub_attachments
+   :0fw
+   | uudeview -p $HOME/epub_attachments -
+}
+</code></pre>
+</div>
+<p>Script to putting all thing together:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c">#$HOME/epubConvertSend.sh</span>
+<span class="c">#fetchmail &amp;&amp;</span>
+fetchmail -d0 -vk pop.gmail.com <span class="o">&amp;&amp;</span>
+
+<span class="c">#the directory that you fetch the .epub attachement to</span>
+<span class="nv">current_directory</span><span class="o">=</span><span class="s1">'/home/pi/epub_attachments/'</span>
+
+<span class="c">#remove spaces in file name</span>
+<span class="k">for </span>i <span class="k">in</span> <span class="nv">$current_directory</span><span class="k">*</span>.epub; <span class="k">do </span>mv <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$i</span> | tr <span class="s1">' '</span> <span class="s1">'_'</span><span class="sb">`</span>; <span class="k">done</span>
+
+<span class="c">#remove uppercase</span>
+<span class="c">#for i in *.[Ee][Pp][Uu][Bb]; do mv "$i" `echo $i | tr '[A-Z]' '[a-z]'`; done</span>
+
+<span class="c">#convert all .epub files to mobi then send them to your kindle one by one</span>
+<span class="k">for </span>i <span class="k">in</span>  <span class="nv">$current_directory</span><span class="k">*</span>.epub ; <span class="k">do </span>ebook-convert <span class="nv">$i</span> <span class="nv">$i</span><span class="s2">".mobi"</span> <span class="o">&amp;&amp;</span> mutt -s <span class="s2">"all mobi"</span> -a <span class="nv">$i</span><span class="s2">".mobi"</span> -- your_kindle_email@kindle.com &lt; ~/text; <span class="k">done</span>
+
+<span class="c">#rm: remove .epub files - MUST; remove .mobi files - OPTIONAL</span>
+<span class="k">for </span>i <span class="k">in</span>  <span class="nv">$current_directory</span><span class="k">*</span>.mobi ; <span class="k">do </span>rm <span class="nv">$i</span>; <span class="k">done
+for </span>i <span class="k">in</span>  <span class="nv">$current_directory</span><span class="k">*</span>.epub ; <span class="k">do </span>rm <span class="nv">$i</span>; <span class="k">done</span>
+</code></pre>
+</div>
+
+<p>Crontab line to run the script every 5
+minutes</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>crontab -e
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>*/5 * * * * /home/pi/epubConvertSend.sh
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>transmission-remote -n 'transmission_user:password' -a ./xxx.torre
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>transmission-remote -n 'transmission_user:password' --add 'magnet:xxx'
+</code></pre>
+</div>
+<ul>
+  <li>with magnet:xxx is a torrent magnet link</li>
+  <li>with transmission user and password is the one that you have entered into the Transmission</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cat * | grep -o "magnet:?xt[^']*" or grep -oh "magnet:?xt[^']*" *
+</code></pre>
+</div>
+
+    </article>
+    </article>
+        
+<!--Create a sorted array of tags-->
+
+
+  <aside>
+    <h3>Archives</h3>
+ <ul class="archives">
+ 				<li><a href="/tags/">All posts</a></li>
+                
+            </ul>
+    <h3>RSS</h3>
+    <p><a href="/feed.xml" title="Subscribe to our RSS feed">Subscribe to our RSS feed</a></p>
+    <h3>Connect with us</h3>
+    <ul class="social">
+    <li><a href="http://www.github.com" title="Github" class="github">Github</a></li>
+    <li><a href="http://www.facebook.com" title="facebook" class="fb">Facebook</a></li>
+    <li><a href="http://www.linkedin.com" title="linked in" class="linked">LinkedIn</a></li>
+    <li><a href="http://www.twitter.com" title="twitter" class="twitter">Twitter</a></li>
+    </ul>
+    </aside>
+
+</main>
+
+          <footer role="contentinfo" class="page-footer">
+<p class="top-link"><a href="#top">return to top</a></p>
+<p class="legal">&copy; 2015 Dat Huynh Nguyen <a href="http://www.ubuntuopenbox.com/about.html" title="[about]">[about]</a> and <a href="http://www.UbuntuOpenbox.com" title="http://www.ubuntuopenbox">http://www.ubuntuopenbox.com</a> | Jekyll theme <a href="https://pages-themes.github.io/hacker/" title="Hacker">Hacker</a> | facebook <a href="https://facebook.com/ubuntuopenbox" title="facebook">facebook.com/ubuntuopenbox</a>.</p>
+</footer>
+
+
+      </section>
+    </div>
+
+    
+  </body>
+</html>
