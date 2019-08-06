@@ -30,7 +30,7 @@ facebook_username: ubuntuopenbox
 markdown: kramdown
 #theme: minimal-mistakes-jekyll
 
-remote_theme: benbalter/retlab
+remote_theme: "mmistakes/minimal-mistakes@4.16.5"
 #theme: jekyll-theme-hacker
 gems:
   - jekyll-feed
@@ -45,3 +45,4 @@ gems: [redcarpet]
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-include-cache
