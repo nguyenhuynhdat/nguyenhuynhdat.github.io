@@ -29,20 +29,21 @@ facebook_username: ubuntuopenbox
 # Build settings
 markdown: kramdown
 #theme: minimal-mistakes-jekyll
+theme: minimal-mistakes-jekyll
 
-remote_theme: "mmistakes/minimal-mistakes@4.16.5"
+
+
+#remote_theme: "mmistakes/minimal-mistakes@4.16.5"
 #theme: jekyll-theme-hacker
-gems:
-  - jekyll-feed
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-gems: [jekyll-paginate]
-paginate: 3
-paginate_path: "/blog/page:num/"
-gems: [redcarpet]
+
+#exclude:
+ # - Gemfile
+  #- Gemfile.lock
+#plugins: [jekyll-paginate]
+#paginate: 3
+#paginate_path: "/blog/page:num/"
+#plugins: [redcarpet]
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-include-cache
